@@ -1,4 +1,4 @@
-.hero {
+  .hero {
     margin-top: 120px;
     margin-bottom: 80px;
   }
@@ -13,6 +13,20 @@
   .hero-lead {
     font-size: 1.2rem;
     color: #222;
+  }
+
+  .nav {
+    margin-bottom: 60px;
+    color: #666;
+  }
+  
+  .nav a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
   }
 
 body {
