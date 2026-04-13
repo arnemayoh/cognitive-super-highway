@@ -60,6 +60,29 @@ body {
     text-decoration: underline;
   }
   
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  
+  .section h2 {
+    margin-bottom: 0.4rem;
+  }
+  
+  .section h2 a {
+    text-decoration: none;
+    color: #111;
+  }
+  
+  .section h2 a:hover {
+    text-decoration: underline;
+  }
+  
+  .section + .section {
+    margin-top: 2.5rem;
+  }
+
   hr {
     margin: 2rem 0;
     border: none;
