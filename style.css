@@ -1,3 +1,20 @@
+.hero {
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
+  
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-lead {
+    font-size: 1.2rem;
+    color: #222;
+  }
+
 body {
     max-width: 700px;
     margin: 60px auto;
@@ -33,4 +50,47 @@ body {
     margin: 2rem 0;
     border: none;
     border-top: 1px solid #ddd;
+  }
+
+  /* Section base */
+
+  .section-title {
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+  
+  .section p {
+    margin-left: 1.2rem;
+  }
+
+  .section {
+    margin-top: 3rem;
+  }
+  
+  /* Section label (icon + title) */
+  .section-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Specific section types */
+  
+  .consider .section-title::before {
+    content: "🧠 ";
+  }
+  
+  .imagine .section-title::before {
+    content: "✨ ";
+  }
+  
+  .conclusion .section-title::before {
+    content: "🏅 ";
+  }
+  
+  .dead-end .section-title::before {
+    content: "⛔ ";
+  }
+  
+  .direction .section-title::before {
+    content: "➡️ ";
   }
