@@ -2,254 +2,552 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Control vs Alignment — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>Control vs Alignment — The Cognitive Super Highway</title>
+  <meta name="description" content="The question is not who controls this. It is what structure makes coordination possible without control." />
+  <meta property="og:title" content="Control vs Alignment — The Cognitive Super Highway" />
+  <meta property="og:description" content="The question is not who controls this. It is what structure makes coordination possible without control." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/control-vs-alignment.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    .exploration-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+    }
+    .exploration-breadcrumb {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .exploration-breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-breadcrumb a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-breadcrumb span { color: var(--lane); margin: 0 0.5rem; }
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+    .exploration-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+    .hero-visual {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+    .hero-visual svg { width: 100%; display: block; }
+    .exploration-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+    .exploration-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--signal);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+    }
+    .exploration-body p.muted { color: rgba(240,238,233,0.6); }
+    .exploration-body strong { font-weight: 500; }
+    .pull-quote {
+      border-left: 2px solid var(--dawn);
+      margin: 2.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.8rem;
+    }
+    .pull-quote p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      font-style: italic;
+      color: var(--signal) !important;
+      line-height: 1.6 !important;
+    }
+    .open-door {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--lane);
+      border-left: 2px solid var(--dawn);
+    }
+    .open-door p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem !important;
+      font-weight: 400;
+      color: rgba(240,238,233,0.55) !important;
+      margin: 0 !important;
+    }
+    .open-door a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+    .open-door a:hover { border-color: var(--dawn); }
+    .exploration-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--lane);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-nav .all-explorations { color: var(--dawn); border-color: rgba(245,166,35,0.4); }
+    @media (max-width: 600px) {
+      .exploration-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
 <body>
 
-  <div class="hero">
-    <h1>Control vs Alignment</h1>
-
-    <p class="hero-lead">
-      The question is often: who controls this?
-    </p>
-  </div>
-
-  <!-- Core -->
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      When people hear about large-scale systems of coordination,
-      the first concern is control.
-    </p>
-    <p>
-      Who decides?
-      Who directs?
-      Who is in charge?
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      Framing the problem as control leads to a dead end.
-    </p>
-    <p>
-      It assumes that complex systems must be directed
-      from a central point.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      But we already operate systems that coordinate at scale
-      without controlling individual intent.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      In traffic, no one controls where you want to go.
-    </p>
-    <p>
-      You decide your destination.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      What is controlled is something else:
-    </p>
-    <p>
-      how movement happens,
-      how interaction is structured,
-      how safety is maintained.
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      A system where everyone could go anywhere—
-      but there were no shared signals,
-      no structure,
-      no expectations.
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      It would not fail because people lack intelligence.
-    </p>
-    <p>
-      It would fail because interaction is unstructured.
-    </p>
-  </div>
-
-  <!-- Responsibility layer -->
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Structure introduces something important:
-    </p>
-    <p>
-      responsibility.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Not responsibility for where you go—
-    </p>
-    <p>
-      but responsibility for how you move within the system.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Signals matter.
-    </p>
-    <p>
-      Intention becomes visible.
-    </p>
-  </div>
-
-  <!-- Failure modes -->
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      When signals are unclear,
-      or intention is hidden,
-      coordination breaks down.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      These are not failures of control.
-    </p>
-    <p>
-      They are failures of alignment.
-    </p>
-  </div>
-
-  <!-- Core shift -->
-
-  <div class="section direction">
-    <div class="section-title">Direction</div>
-    <p>
-      Alignment does not mean agreement.
-    </p>
-    <p>
-      It means shared structure for interaction.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      People can have different goals,
-      different destinations,
-      different intentions—
-    </p>
-    <p>
-      and still move safely within the same system.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Even in well-functioning systems, failure does not disappear.
-    </p>
-      <p>
-      Accidents still happen.
-      Misjudgments still occur.
-    </p>
-  </div>
-  
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Traffic laws exist not because the system is perfect—
-    </p>
-    <p>
-      but because failure is expected.
-    </p>
-  </div>
-  
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      They make failure visible.
-      They define responsibility.
-      They limit harm.
-    </p>
-  </div>
-  
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      The goal is not to eliminate all failure.
-    </p>
-    <p>
-      That leads to rigidity—or illusion.
-    </p>
-  </div>
-  
-  <div class="section direction">
-    <div class="section-title">Direction</div>
-    <p>
-      The goal is to build systems that can absorb failure,
-      learn from it,
-      and reduce its impact over time.
-    </p>
-  </div>
-
-  <!-- Conclusion -->
-
-  <div class="section conclusion">
-    <div class="section-title">Conclusion</div>
-    <p>
-      The Cognitive Super Highway is not about controlling outcomes.
-    </p>
-    <p>
-      It is about enabling coordinated movement.
-    </p>
-    <p>
-      Not through authority—
-      but through shared infrastructure.
-    </p>
-  </div>
-
-  <!-- Navigation -->
-
-  <hr>
-
-  <div class="footnote">
-    <p>
-      Continue exploring:
-      <a href="index.html">Explorations</a>
-    </p>
-
-    <p>
-      Return:
+  <header class="exploration-header">
+    <p class="exploration-breadcrumb">
       <a href="../index.html">The Cognitive Super Highway</a>
+      <span>/</span>
+      <a href="index.html">Explorations</a>
+      <span>/</span> Control vs Alignment
     </p>
+    <h1 class="exploration-title">
+      The question is not<br>who controls this.
+    </h1>
+    <p class="exploration-subtitle">
+      On the difference between directing outcomes from a centre
+      and creating shared structure that makes coordinated movement possible.
+    </p>
+  </header>
+
+  <!-- ── HERO VISUAL ─────────────────────────────────────── -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Two intersections side by side: one controlled from a centre with radiating command lines, one aligned with lanes and signals where movement is self-directed within shared structure</title>
+      <desc>Left intersection: a central authority figure with lines radiating to each vehicle — rigid, brittle. Right intersection: traffic lights, lane markings, vehicles moving freely within structure — resilient, scalable.</desc>
+
+      <!-- ════════════════════════════
+           LEFT: CONTROL MODEL
+           ════════════════════════════ -->
+      <g transform="translate(30, 20)">
+
+        <!-- Road surface: horizontal -->
+        <rect x="0" y="88" width="270" height="54" rx="0"
+              fill="#2B2B33" opacity="0.7" />
+        <!-- Road surface: vertical -->
+        <rect x="108" y="0" width="54" height="220" rx="0"
+              fill="#2B2B33" opacity="0.7" />
+        <!-- Intersection box -->
+        <rect x="108" y="88" width="54" height="54" rx="0"
+              fill="#333340" opacity="0.8" />
+
+        <!-- Lane markings: horizontal -->
+        <line x1="0"   y1="115" x2="100" y2="115"
+              stroke="#9A9896" stroke-width="0.6"
+              stroke-dasharray="8 6" opacity="0.3" />
+        <line x1="170" y1="115" x2="270" y2="115"
+              stroke="#9A9896" stroke-width="0.6"
+              stroke-dasharray="8 6" opacity="0.3" />
+        <!-- Lane markings: vertical -->
+        <line x1="135" y1="0"   x2="135" y2="80"
+              stroke="#9A9896" stroke-width="0.6"
+              stroke-dasharray="8 6" opacity="0.3" />
+        <line x1="135" y1="168" x2="135" y2="220"
+              stroke="#9A9896" stroke-width="0.6"
+              stroke-dasharray="8 6" opacity="0.3" />
+
+        <!-- Central controller: person/authority at intersection centre -->
+        <circle cx="135" cy="115" r="10"
+                fill="none" stroke="#9A9896" stroke-width="1.2" opacity="0.6" />
+        <circle cx="135" cy="110" r="3.5"
+                fill="#9A9896" opacity="0.5" />
+        <path d="M128 125 Q135 120 142 125"
+              fill="none" stroke="#9A9896" stroke-width="1"
+              stroke-linecap="round" opacity="0.4" />
+
+        <!-- Command lines radiating to vehicles -->
+        <!-- NW vehicle -->
+        <line x1="135" y1="115" x2="52" y2="52"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.4" />
+        <!-- NE vehicle -->
+        <line x1="135" y1="115" x2="218" y2="52"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.4" />
+        <!-- SW vehicle -->
+        <line x1="135" y1="115" x2="52" y2="178"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.4" />
+        <!-- SE vehicle -->
+        <line x1="135" y1="115" x2="218" y2="178"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.4" />
+        <!-- W vehicle -->
+        <line x1="135" y1="115" x2="18" y2="115"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.35" />
+        <!-- E vehicle -->
+        <line x1="135" y1="115" x2="252" y2="115"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.35" />
+
+        <!-- Vehicles: simple rectangles -->
+        <!-- NW -->
+        <rect x="40" y="42" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <!-- NE -->
+        <rect x="208" y="42" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <!-- SW -->
+        <rect x="40" y="170" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <!-- SE -->
+        <rect x="208" y="170" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <!-- W -->
+        <rect x="8" y="108" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <!-- E -->
+        <rect x="242" y="108" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+
+        <!-- Fragility indicator: crack lines at centre -->
+        <line x1="128" y1="108" x2="122" y2="102"
+              stroke="#9A9896" stroke-width="0.6" opacity="0.25" />
+        <line x1="142" y1="108" x2="148" y2="102"
+              stroke="#9A9896" stroke-width="0.6" opacity="0.25" />
+      </g>
+
+      <!-- Left label -->
+      <text x="165" y="246"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.16em" text-anchor="middle"
+            fill="#9A9896" opacity="0.6">CONTROL</text>
+      <text x="165" y="259"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.35">directed from centre</text>
+
+      <!-- ── VS MARKER ───────────────────────────────────── -->
+      <text x="340" y="128"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="11" font-weight="300"
+            text-anchor="middle"
+            fill="#3D3D45" opacity="0.8">vs</text>
+
+      <!-- ════════════════════════════
+           RIGHT: ALIGNMENT MODEL
+           ════════════════════════════ -->
+      <g transform="translate(370, 20)">
+
+        <!-- Road surface: horizontal -->
+        <rect x="0" y="88" width="270" height="54" rx="0"
+              fill="#2B2B33" opacity="0.7" />
+        <!-- Road surface: vertical -->
+        <rect x="108" y="0" width="54" height="220" rx="0"
+              fill="#2B2B33" opacity="0.7" />
+        <!-- Intersection box -->
+        <rect x="108" y="88" width="54" height="54" rx="0"
+              fill="#333340" opacity="0.8" />
+
+        <!-- Lane markings: horizontal — cleaner, more defined -->
+        <line x1="0"   y1="115" x2="100" y2="115"
+              stroke="#F0EEE9" stroke-width="0.8"
+              stroke-dasharray="10 6" opacity="0.2" />
+        <line x1="170" y1="115" x2="270" y2="115"
+              stroke="#F0EEE9" stroke-width="0.8"
+              stroke-dasharray="10 6" opacity="0.2" />
+        <!-- Lane edge lines: horizontal -->
+        <line x1="0" y1="88"  x2="108" y2="88"
+              stroke="#F0EEE9" stroke-width="0.5" opacity="0.15" />
+        <line x1="0" y1="142" x2="108" y2="142"
+              stroke="#F0EEE9" stroke-width="0.5" opacity="0.15" />
+        <line x1="162" y1="88"  x2="270" y2="88"
+              stroke="#F0EEE9" stroke-width="0.5" opacity="0.15" />
+        <line x1="162" y1="142" x2="270" y2="142"
+              stroke="#F0EEE9" stroke-width="0.5" opacity="0.15" />
+        <!-- Lane markings: vertical -->
+        <line x1="135" y1="0"   x2="135" y2="80"
+              stroke="#F0EEE9" stroke-width="0.8"
+              stroke-dasharray="10 6" opacity="0.2" />
+        <line x1="135" y1="168" x2="135" y2="220"
+              stroke="#F0EEE9" stroke-width="0.8"
+              stroke-dasharray="10 6" opacity="0.2" />
+
+        <!-- Traffic lights: 4 corners of intersection -->
+        <!-- NW light -->
+        <rect x="96" y="76" width="8" height="18" rx="2"
+              fill="#3D3D45" stroke="#9A9896" stroke-width="0.5" opacity="0.8" />
+        <circle cx="100" cy="80" r="2.5" fill="#F5A623" opacity="0.9" />
+        <circle cx="100" cy="87" r="2.5" fill="#3D3D45" opacity="0.5" />
+        <!-- NE light -->
+        <rect x="158" y="76" width="8" height="18" rx="2"
+              fill="#3D3D45" stroke="#9A9896" stroke-width="0.5" opacity="0.8" />
+        <circle cx="162" cy="80" r="2.5" fill="#3D3D45" opacity="0.5" />
+        <circle cx="162" cy="87" r="2.5" fill="#9A9896" opacity="0.6" />
+        <!-- SW light -->
+        <rect x="96" y="148" width="8" height="18" rx="2"
+              fill="#3D3D45" stroke="#9A9896" stroke-width="0.5" opacity="0.8" />
+        <circle cx="100" cy="152" r="2.5" fill="#F5A623" opacity="0.9" />
+        <circle cx="100" cy="159" r="2.5" fill="#3D3D45" opacity="0.5" />
+        <!-- SE light -->
+        <rect x="158" y="148" width="8" height="18" rx="2"
+              fill="#3D3D45" stroke="#9A9896" stroke-width="0.5" opacity="0.8" />
+        <circle cx="162" cy="152" r="2.5" fill="#3D3D45" opacity="0.5" />
+        <circle cx="162" cy="159" r="2.5" fill="#9A9896" opacity="0.6" />
+
+        <!-- Vehicles: moving freely in their lanes, various directions -->
+        <!-- Heading right, top lane -->
+        <rect x="30" y="93" width="22" height="14" rx="3"
+              fill="none" stroke="#F5A623" stroke-width="1" opacity="0.6" />
+        <line x1="52" y1="100" x2="62" y2="100"
+              stroke="#F5A623" stroke-width="0.8"
+              marker-end="url(#arr-al)" opacity="0.4" />
+        <!-- Heading left, bottom lane -->
+        <rect x="218" y="121" width="22" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <line x1="218" y1="128" x2="208" y2="128"
+              stroke="#9A9896" stroke-width="0.8"
+              marker-end="url(#arr-al-r)" opacity="0.35" />
+        <!-- Heading down, right lane -->
+        <rect x="115" y="30" width="14" height="22" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <line x1="122" y1="52" x2="122" y2="62"
+              stroke="#9A9896" stroke-width="0.8"
+              marker-end="url(#arr-al-d)" opacity="0.35" />
+        <!-- Heading up, left lane -->
+        <rect x="143" y="180" width="14" height="22" rx="3"
+              fill="none" stroke="#F5A623" stroke-width="1" opacity="0.5" />
+        <line x1="150" y1="180" x2="150" y2="170"
+              stroke="#F5A623" stroke-width="0.8"
+              marker-end="url(#arr-al-u)" opacity="0.35" />
+
+        <defs>
+          <marker id="arr-al" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="4" markerHeight="4" orient="auto">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#F5A623"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </marker>
+          <marker id="arr-al-r" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="4" markerHeight="4" orient="auto">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#9A9896"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </marker>
+          <marker id="arr-al-d" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="4" markerHeight="4" orient="auto">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#9A9896"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </marker>
+          <marker id="arr-al-u" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="4" markerHeight="4" orient="auto">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#F5A623"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </marker>
+        </defs>
+
+        <!-- Shared structure label at centre -->
+        <text x="135" y="118"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="600"
+              letter-spacing="0.1em" text-anchor="middle"
+              fill="#F5A623" opacity="0.5">SHARED</text>
+        <text x="135" y="127"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="600"
+              letter-spacing="0.1em" text-anchor="middle"
+              fill="#F5A623" opacity="0.5">SIGNAL</text>
+      </g>
+
+      <!-- Right label -->
+      <text x="505" y="246"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.16em" text-anchor="middle"
+            fill="#F5A623" opacity="0.75">ALIGNMENT</text>
+      <text x="505" y="259"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#F5A623" opacity="0.5">structured, self-directed</text>
+
+    </svg>
   </div>
+
+  <!-- ── BODY CONTENT ────────────────────────────────────── -->
+  <main class="exploration-body">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        When people hear about large-scale systems of coordination, the first concern is control. Who decides? Who directs? Who is in charge?
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        Framing the problem as control leads to a dead end. It assumes that complex systems must be directed from a central point. But centralised direction doesn't scale — and it's brittle. Remove the centre and everything stops.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        We already operate systems that coordinate at scale without controlling individual intent. In traffic, no one controls where you want to go. You decide your destination. What is controlled is something else: how movement happens, how interaction is structured, how safety is maintained.
+      </p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Alignment does not mean agreement. It means shared structure for interaction."</p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        A system where everyone could go anywhere — but there were no shared signals, no structure, no expectations. It would not fail because people lack intelligence. It would fail because interaction is unstructured. The problem was never the drivers.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Structure introduces something important: <strong>responsibility</strong>. Not responsibility for where you go — but responsibility for how you move within the system. Signals matter. Intention becomes visible. When signals are unclear or intention is hidden, coordination breaks down. These are not failures of control. They are failures of alignment.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        People can have different goals, different destinations, different intentions — and still move safely within the same system. That is what shared infrastructure makes possible. Not uniformity. Coordination.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Even in well-functioning systems, failure does not disappear. Accidents still happen. Misjudgements still occur. Traffic laws exist not because the system is perfect — but because failure is expected. They make failure visible. They define responsibility. They limit harm.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        The goal is not to eliminate all failure. That leads to rigidity — or illusion. A system designed to never fail is a system that cannot absorb the unexpected. And the unexpected always arrives.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <p class="beat-text">
+        The goal is to build systems that can <strong>absorb failure, learn from it, and reduce its impact over time</strong>. That requires visible reasoning, traceable intention, and shared structure — not a centre that controls every move.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        The Cognitive Super Highway is not about controlling outcomes. It is about enabling coordinated movement — not through authority, but through shared infrastructure. The question was never who controls this. The question is what structure makes coordination possible without control.
+      </p>
+    </div>
+
+    <!-- ── OPEN DOOR ──────────────────────────────────────── -->
+    <div class="open-door">
+      <p>This raises a question for you?
+        <a href="mailto:questions@cognitivesuperhighway.org">Send it.</a>
+        Selected questions shape future explorations.</p>
+    </div>
+
+    <!-- ── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="exploration-nav">
+      <a href="attribution-and-value.html">← Attribution, Value, and the End of Secrecy</a>
+      <a href="index.html" class="all-explorations">All Explorations</a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
 
 </body>
 </html>

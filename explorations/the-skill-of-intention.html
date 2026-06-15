@@ -2,152 +2,536 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Skill of Intention — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>The Skill of Intention — The Cognitive Super Highway</title>
+  <meta name="description" content="Navigation got automated. Destination became everything. On what AI changes about the skills that matter most." />
+  <meta property="og:title" content="The Skill of Intention — The Cognitive Super Highway" />
+  <meta property="og:description" content="Navigation got automated. Destination became everything. On what AI changes about the skills that matter most." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/the-skill-of-intention.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    .exploration-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+    }
+
+    .exploration-breadcrumb {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .exploration-breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exploration-breadcrumb a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-breadcrumb span { color: var(--lane); margin: 0 0.5rem; }
+
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+
+    .exploration-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-visual {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+
+    .hero-visual svg { width: 100%; display: block; }
+
+    .exploration-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+
+    .exploration-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--signal);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+    }
+
+    .exploration-body p.muted { color: rgba(240,238,233,0.6); }
+    .exploration-body strong { font-weight: 500; }
+
+    .pull-quote {
+      border-left: 2px solid var(--dawn);
+      margin: 2.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.8rem;
+    }
+
+    .pull-quote p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      font-style: italic;
+      color: var(--signal) !important;
+      line-height: 1.6 !important;
+    }
+
+    .open-door {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--lane);
+      border-left: 2px solid var(--dawn);
+    }
+
+    .open-door p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem !important;
+      font-weight: 400;
+      color: rgba(240,238,233,0.55) !important;
+      margin: 0 !important;
+    }
+
+    .open-door a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .open-door a:hover { border-color: var(--dawn); }
+
+    .exploration-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--lane);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-nav .all-explorations { color: var(--dawn); border-color: rgba(245,166,35,0.4); }
+
+    @media (max-width: 600px) {
+      .exploration-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
 <body>
 
-  <div class="hero">
-    <h1>The Skill of Intention</h1>
-
-    <p class="hero-lead">
-      What if the primary skill was not navigating systems—
-      but expressing where you want to go?
-    </p>
-  </div>
-
-  <!-- Core -->
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Not long ago, navigating a city required detailed knowledge.
-    </p>
-    <p>
-      You had to know the roads, the turns, the structure.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Today, you can simply say where you want to go.
-    </p>
-    <p>
-      A system translates that intention into movement.
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      You don’t need to understand the full map.
-    </p>
-    <p>
-      You express your intention—
-      and the infrastructure helps you navigate.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      This did not make navigation trivial.
-    </p>
-    <p>
-      It made intention sufficient.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Something similar is emerging with AI.
-    </p>
-    <p>
-      A well-formed prompt produces a better result.
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      But without structure, this remains fragile.
-    </p>
-    <p>
-      The same intention must be repeated, refined, and reconstructed.
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      A system where intention does not need to be restated.
-    </p>
-    <p>
-      Where it persists, evolves, and coordinates action across contexts.
-    </p>
-  </div>
-
-  <div class="section direction">
-    <div class="section-title">Direction</div>
-    <p>
-      In such a system, the primary human skill changes.
-    </p>
-    <p>
-      Not navigating complexity—
-      but expressing intention clearly.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      This does not remove complexity.
-    </p>
-    <p>
-      It reorganizes it around what people are trying to achieve.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Infrastructure does not eliminate obstacles.
-    </p>
-    <p>
-      It makes them visible, manageable, and navigable.
-    </p>
-  </div>
-
-  <div class="section conclusion">
-    <div class="section-title">Conclusion</div>
-    <p>
-      The Cognitive Super Highway points toward a world where:
-    </p>
-    <p>
-      expressing intention is enough to begin—
-      and the system helps carry it forward.
-    </p>
-  </div>
-
-  <!-- Navigation -->
-
-  <hr>
-
-  <div class="footnote">
-    <p>
-      Continue exploring:
-      <a href="index.html">Explorations</a>
-    </p>
-
-    <p>
-      Return:
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="exploration-header">
+    <p class="exploration-breadcrumb">
       <a href="../index.html">The Cognitive Super Highway</a>
+      <span>/</span>
+      <a href="index.html">Explorations</a>
+      <span>/</span> The Skill of Intention
     </p>
+
+    <h1 class="exploration-title">
+      Navigation got automated.<br>Intention became everything.
+    </h1>
+    <p class="exploration-subtitle">
+      From maps to satnav to AI prompts — what becomes possible
+      when expressing where you want to go matters more than knowing the route.
+    </p>
+  </header>
+
+  <!-- ── HERO VISUAL ─────────────────────────────────────── -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 680 248" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Three stages: paper map, satnav device, AI prompt — intention thread brightening at each step</title>
+      <desc>Three objects in sequence. Above each, an intention marker grows progressively brighter. The thread labelled intention at the start becomes fully lit at the end, where it meets a destination star.</desc>
+
+      <!-- Ground line -->
+      <line x1="40" y1="210" x2="640" y2="210"
+            stroke="#3D3D45" stroke-width="1" />
+
+      <!-- ── INTENTION THREAD (brightening left to right) ── -->
+      <!-- Dim start segment -->
+      <line x1="88" y1="50" x2="240" y2="50"
+            stroke="#F5A623" stroke-width="1"
+            opacity="0.25" stroke-dasharray="5 4" />
+      <!-- Mid segment — solidifying -->
+      <line x1="240" y1="50" x2="420" y2="50"
+            stroke="#F5A623" stroke-width="1.4"
+            opacity="0.55" />
+      <!-- Bright final segment -->
+      <line x1="420" y1="50" x2="580" y2="50"
+            stroke="#F5A623" stroke-width="2"
+            opacity="0.9" />
+
+      <!-- "intention" label at thread start -->
+      <text x="42" y="54"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#F5A623" opacity="0.4">intent</text>
+
+      <!-- Destination star at thread end -->
+      <g transform="translate(594, 38)" opacity="0.9">
+        <polygon points="12,0 14.5,8.5 23,8.5 16,14 18.5,22.5 12,17 5.5,22.5 8,14 1,8.5 9.5,8.5"
+                 fill="#F5A623" opacity="0.85" />
+      </g>
+
+      <!-- ════════════════════════════
+           STAGE 1: PAPER MAP
+           ════════════════════════════ -->
+      <g transform="translate(42, 72)">
+        <!-- Map body -->
+        <rect x="0" y="0" width="92" height="118" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1.4" opacity="0.6" />
+        <!-- Fold lines -->
+        <line x1="46" y1="0" x2="46" y2="118"
+              stroke="#9A9896" stroke-width="0.5" opacity="0.25" stroke-dasharray="2 2" />
+        <line x1="0" y1="59" x2="92" y2="59"
+              stroke="#9A9896" stroke-width="0.5" opacity="0.25" stroke-dasharray="2 2" />
+        <!-- Road lines on map -->
+        <path d="M10 20 Q30 30 50 18 Q70 8 80 30"
+              fill="none" stroke="#9A9896" stroke-width="1.2"
+              stroke-linecap="round" opacity="0.45" />
+        <path d="M8 50 Q28 44 46 56 Q64 68 84 60"
+              fill="none" stroke="#9A9896" stroke-width="1.2"
+              stroke-linecap="round" opacity="0.4" />
+        <path d="M15 80 Q35 90 55 78 Q72 68 82 85"
+              fill="none" stroke="#9A9896" stroke-width="1"
+              stroke-linecap="round" opacity="0.35" />
+        <!-- You-are-here dot -->
+        <circle cx="24" cy="50" r="4"
+                fill="#9A9896" opacity="0.5" />
+        <!-- Destination dot -->
+        <circle cx="74" cy="26" r="4"
+                fill="#9A9896" opacity="0.35" />
+        <!-- Dotted route -->
+        <path d="M24 50 Q40 36 74 26"
+              fill="none" stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.3" />
+        <!-- Intention marker: faint -->
+        <circle cx="46" cy="-22" r="4"
+                fill="#F5A623" opacity="0.25" />
+        <line x1="46" y1="-18" x2="46" y2="-4"
+              stroke="#F5A623" stroke-width="0.8"
+              opacity="0.2" stroke-dasharray="2 2" />
+      </g>
+
+      <!-- Stage 1 label -->
+      <text x="88" y="232"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#9A9896" opacity="0.6">PAPER MAP</text>
+      <text x="88" y="246"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.35">know the roads</text>
+
+      <!-- ── TRANSITION ARROW 1 ─── -->
+      <defs>
+        <marker id="arr-i" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#9A9896"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </marker>
+      </defs>
+
+      <g opacity="0.3">
+        <line x1="158" y1="140" x2="214" y2="140"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 3"
+              marker-end="url(#arr-i)" />
+        <text x="186" y="128"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="500"
+              letter-spacing="0.1em" text-anchor="middle"
+              fill="#9A9896">AUTOMATED</text>
+      </g>
+
+      <!-- ════════════════════════════
+           STAGE 2: SATNAV DEVICE
+           ════════════════════════════ -->
+      <g transform="translate(220, 68)">
+        <!-- Device body -->
+        <rect x="0" y="0" width="80" height="122" rx="8"
+              fill="none" stroke="#9A9896" stroke-width="1.4" opacity="0.65" />
+        <!-- Screen area -->
+        <rect x="6" y="6" width="68" height="86" rx="4"
+              fill="#2A3A52" opacity="0.5" />
+        <!-- Map display on screen -->
+        <path d="M12 60 Q30 48 50 55 Q64 60 74 48"
+              fill="none" stroke="#9A9896" stroke-width="1"
+              stroke-linecap="round" opacity="0.35" />
+        <path d="M12 74 Q28 68 44 72 Q58 76 74 68"
+              fill="none" stroke="#9A9896" stroke-width="1"
+              stroke-linecap="round" opacity="0.3" />
+        <!-- Route highlight on screen -->
+        <path d="M18 88 Q34 72 54 60 Q66 52 72 44"
+              fill="none" stroke="#F5A623" stroke-width="1.5"
+              stroke-linecap="round" opacity="0.45" />
+        <!-- Arrow indicator -->
+        <polygon points="40,16 52,38 34,34"
+                 fill="#9A9896" opacity="0.5" />
+        <!-- Bottom button row -->
+        <line x1="20" y1="104" x2="60" y2="104"
+              stroke="#9A9896" stroke-width="0.8" opacity="0.3" />
+        <circle cx="40" cy="114" r="5"
+                fill="none" stroke="#9A9896" stroke-width="1" opacity="0.35" />
+        <!-- Intention marker: medium -->
+        <circle cx="40" cy="-18" r="4"
+                fill="#F5A623" opacity="0.55" />
+        <line x1="40" y1="-14" x2="40" y2="-4"
+              stroke="#F5A623" stroke-width="0.8" opacity="0.45" />
+      </g>
+
+      <!-- Stage 2 label -->
+      <text x="300" y="232"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#9A9896" opacity="0.65">SATNAV</text>
+      <text x="300" y="246"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.4">say where to go</text>
+
+      <!-- ── TRANSITION ARROW 2 ─── -->
+      <g opacity="0.3">
+        <line x1="372" y1="140" x2="428" y2="140"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 3"
+              marker-end="url(#arr-i)" />
+        <text x="400" y="128"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="500"
+              letter-spacing="0.1em" text-anchor="middle"
+              fill="#9A9896">EXTENDED</text>
+      </g>
+
+      <!-- ════════════════════════════
+           STAGE 3: AI PROMPT
+           ════════════════════════════ -->
+      <g transform="translate(436, 68)">
+        <!-- Screen / terminal -->
+        <rect x="0" y="0" width="140" height="122" rx="6"
+              fill="none" stroke="#9A9896" stroke-width="1.4" opacity="0.7" />
+        <!-- Screen bg -->
+        <rect x="4" y="4" width="132" height="114" rx="4"
+              fill="#1A1A1F" opacity="0.7" />
+        <!-- Prompt lines — text-like marks -->
+        <line x1="14" y1="24" x2="72" y2="24"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+        <line x1="14" y1="36" x2="116" y2="36"
+              stroke="#9A9896" stroke-width="1" opacity="0.25" />
+        <!-- Prompt text suggestion -->
+        <text x="14" y="58"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="400"
+              fill="#F5A623" opacity="0.7">"I want to reach</text>
+        <text x="14" y="71"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="400"
+              fill="#F5A623" opacity="0.7"> a world where..."</text>
+        <!-- Cursor blink -->
+        <rect x="14" y="82" width="6" height="10" rx="1"
+              fill="#F5A623" opacity="0.6" />
+        <!-- Response lines -->
+        <line x1="14" y1="102" x2="126" y2="102"
+              stroke="#9A9896" stroke-width="0.8" opacity="0.2" />
+        <line x1="14" y1="112" x2="96"  y2="112"
+              stroke="#9A9896" stroke-width="0.8" opacity="0.15" />
+        <!-- Intention marker: fully bright -->
+        <circle cx="70" cy="-18" r="5"
+                fill="#F5A623" opacity="0.9" />
+        <line x1="70" y1="-13" x2="70" y2="-4"
+              stroke="#F5A623" stroke-width="1.2" opacity="0.8" />
+      </g>
+
+      <!-- Stage 3 label -->
+      <text x="506" y="232"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#F5A623" opacity="0.85">AI PROMPT</text>
+      <text x="506" y="246"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#F5A623" opacity="0.55">intention is everything</text>
+
+    </svg>
   </div>
+
+  <!-- ── BODY CONTENT ────────────────────────────────────── -->
+  <main class="exploration-body">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Not long ago, navigating a city required detailed knowledge. You had to know the roads, the turns, the structure. Getting somewhere meant carrying the map in your head.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Then satnav arrived. Suddenly you could simply say where you wanted to go. A system translated that intention into movement. The map was still there — you just no longer had to hold it.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        This did not make navigation trivial. It made <strong>intention sufficient</strong>. The skill that mattered shifted — from knowing the roads to knowing your destination clearly enough to state it.
+      </p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"The navigator was never the point. Knowing where you want to go was always the point."</p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Something similar is emerging with AI. A well-formed prompt produces a better result. The execution — writing, coding, analysis, synthesis — is increasingly handled. What remains irreducibly human is the question: <strong>what are we actually trying to achieve?</strong>
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        The fear is that AI takes the jobs. The more careful observation is that AI takes the navigation — and leaves the destination entirely in human hands. That is not a diminishment. It is a concentration of what matters most.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        But without structure, this remains fragile. The same intention must be repeated, refined, and reconstructed across every interaction. There is no continuity. Each session begins again. The destination has to be restated every time you get in the car.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        A system where intention does not need to be restated. Where it persists, evolves, and coordinates action across contexts. Where your direction is known — and the infrastructure helps carry it forward every time you engage.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <p class="beat-text">
+        In such a system, the primary human skill changes. Not navigating complexity — but <strong>expressing intention clearly, continuously, and with enough precision that it can travel</strong>. That skill does not become obsolete. It becomes the most valuable thing a person can develop.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        The Cognitive Super Highway points toward a world where expressing intention is enough to begin — and the infrastructure helps carry it forward. The question is not whether AI will replace human skill. It is whether we will build the infrastructure that makes human intention powerful enough to direct what AI can do.
+      </p>
+    </div>
+
+    <!-- ── OPEN DOOR ──────────────────────────────────────── -->
+    <div class="open-door">
+      <p>This raises a question for you?
+        <a href="mailto:questions@cognitivesuperhighway.org">Send it.</a>
+        Selected questions shape future explorations.</p>
+    </div>
+
+    <!-- ── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="exploration-nav">
+      <a href="story-of-a-tool.html">← The Story of a Tool</a>
+      <a href="index.html" class="all-explorations">All Explorations</a>
+      <a href="attribution-and-value.html">Attribution, Value and the End of Secrecy →</a>
+    </nav>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
 
 </body>
 </html>

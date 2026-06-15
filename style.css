@@ -1,182 +1,467 @@
-  .hero {
-    margin-top: 120px;
-    margin-bottom: 80px;
-  }
-  
-  .hero h1 {
-    font-size: 2.6rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-lead {
-    font-size: 1.2rem;
-    color: #222;
-  }
+/* ============================================================
+   cognitivesuperhighway.org — shared stylesheet
+   ============================================================ */
 
-  .nav {
-    margin-bottom: 60px;
-    color: #666;
-  }
-  
-  .nav a {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  .nav a:hover {
-    text-decoration: underline;
-  }
-  /* === ESSAYS === */
+/* ── RESET & BASE ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.essay-hero {
-  margin-bottom: 3rem;
+:root {
+  --asphalt:     #1A1A1F;
+  --asphalt-mid: #2B2B33;
+  --lane:        #3D3D45;
+  --horizon:     #2A3A52;
+  --dawn:        #F5A623;
+  --dawn-dim:    #C47D0E;
+  --signal:      #F0EEE9;
+  --muted:       #9A9896;
+  --sign-green:  #1A4D2E;
+  --sign-yellow: #D4A017;
+  --sign-red:    #8B2020;
 }
 
-.essay-hero h1 {
-  font-size: 2.5rem;
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--asphalt);
+  color: var(--signal);
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/pkos-vehicle.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  filter: brightness(0.38) saturate(0.7);
+  z-index: 0;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(26,26,31,0.6) 75%,
+    var(--asphalt) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.hero-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
   font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dawn);
+  margin-bottom: 2rem;
 }
 
-.essay-lead {
-  font-size: 1.2rem;
-  color: #555;
-  margin-top: 1rem;
+.hero-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--signal);
+  margin-bottom: 1.8rem;
 }
 
-/* slightly denser text for essays */
-.essay p {
-  max-width: 700px;
-  line-height: 1.6;
+.hero-headline em {
+  font-style: normal;
+  color: var(--dawn);
 }
 
-/* section titles slightly toned down */
-.essay .section-title {
-  opacity: 0.7;
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(240,238,233,0.7);
+  max-width: 560px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
 }
 
-/* subtle divider */
-.essay-divider {
-  margin: 4rem 0;
-  border-top: 1px solid #ddd;
+.hero-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.essay-image {
-  margin: 3rem 0;
+
+.hero-nav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lane);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.45;
+}
+
+.scroll-cue span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--muted), transparent);
+}
+
+/* ── ROAD SECTION (Consider rhythm) ───────────────────────── */
+.road {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2rem;
+}
+
+.beat {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 2rem;
+  margin-bottom: 3.5rem;
+  align-items: start;
+}
+
+/* Sign column */
+.sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.sign-shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* CONSIDER — yellow diamond */
+.sign--consider .sign-shape {
+  width: 42px;
+  height: 42px;
+  background: var(--sign-yellow);
+  color: #1A1A1F;
+  transform: rotate(45deg);
+}
+
+.sign--consider .sign-shape span {
+  transform: rotate(-45deg);
+  display: block;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* DEAD END — red octagon */
+.sign--deadend .sign-shape {
+  width: 46px;
+  height: 46px;
+  background: var(--sign-red);
+  color: #F0EEE9;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.sign--deadend .sign-shape span {
+  display: block;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* DIRECTION — green rectangle */
+.sign--direction .sign-shape {
+  width: 60px;
+  height: 30px;
+  background: var(--sign-green);
+  color: #F0EEE9;
+  border-radius: 2px;
+  border: 1.5px solid rgba(240,238,233,0.3);
+}
+
+/* IMAGINE — horizon blue pill */
+.sign--imagine .sign-shape {
+  width: 60px;
+  height: 30px;
+  background: var(--horizon);
+  color: #F0EEE9;
+  border-radius: 15px;
+}
+
+/* CONCLUSION — dawn accent bar */
+.sign--conclusion .sign-shape {
+  width: 6px;
+  height: 42px;
+  background: var(--dawn);
+  border-radius: 3px;
+}
+
+.sign-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
   text-align: center;
 }
 
-.essay-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
+/* Beat content */
+.beat-text {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--signal);
 }
 
-.image-caption {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.5rem;
+.beat-text p { margin-bottom: 0.5rem; }
+
+.beat-text strong {
+  font-weight: 500;
+  color: var(--signal);
 }
 
-body {
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 0 20px;
-  
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-  
-    color: #111;
-    background: #fff;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-  
-  p {
-    margin-bottom: 1rem;
-  }
-  
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  h2 {
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-bottom: 0.4rem;
-  }
-  
-  .section h2 {
-    margin-bottom: 0.4rem;
-  }
-  
-  .section h2 a {
-    text-decoration: none;
-    color: #111;
-  }
-  
-  .section h2 a:hover {
-    text-decoration: underline;
-  }
-  
-  .section + .section {
-    margin-top: 2.5rem;
+.beat-text.muted { color: rgba(240,238,233,0.65); }
+
+/* List inside beat */
+.beat-text ul {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+.beat-text ul li {
+  padding: 0.25rem 0 0.25rem 1.4rem;
+  position: relative;
+}
+
+.beat-text ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--dawn);
+}
+
+/* ── LANE DIVIDER ──────────────────────────────────────────── */
+.lane-divider {
+  max-width: 720px;
+  margin: 1rem auto 4rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lane-divider::before,
+.lane-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--lane);
+}
+
+.lane-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dawn);
+  opacity: 0.6;
+}
+
+.open-door {
+  margin: 3rem 0 1rem;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--lane);
+  border-left: 2px solid var(--dawn);
+}
+
+.open-door p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem !important;
+  font-weight: 400;
+  color: rgba(240,238,233,0.55) !important;
+  margin: 0 !important;
+}
+
+.open-door a {
+  color: var(--dawn);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245,166,35,0.3);
+  transition: border-color 0.2s;
+}
+
+.open-door a:hover { border-color: var(--dawn); }
+
+/* ── HORIZON SECTION ───────────────────────────────────────── */
+.horizon-section {
+  background: linear-gradient(to bottom, var(--asphalt) 0%, var(--horizon) 100%);
+  padding: 5rem 2rem 6rem;
+  text-align: center;
+}
+
+.horizon-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.horizon-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dawn);
+  margin-bottom: 1.5rem;
+}
+
+.horizon-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--signal);
+  margin-bottom: 1.5rem;
+}
+
+.horizon-body {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(240,238,233,0.7);
+  line-height: 1.85;
+  margin-bottom: 2.5rem;
+}
+
+/* ── LINK PILLS ────────────────────────────────────────────── */
+.links-strip {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.link-pill {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--signal);
+  text-decoration: none;
+  border: 1px solid rgba(240,238,233,0.25);
+  padding: 0.55rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.link-pill:hover {
+  background: rgba(245,166,35,0.12);
+  border-color: var(--dawn);
+  color: var(--dawn);
+}
+
+.link-pill--primary {
+  background: var(--dawn);
+  border-color: var(--dawn);
+  color: var(--asphalt);
+}
+
+.link-pill--primary:hover {
+  background: var(--dawn-dim);
+  border-color: var(--dawn-dim);
+  color: var(--asphalt);
+}
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+.footer {
+  background: var(--asphalt);
+  border-top: 1px solid var(--lane);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.footer-text a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lane);
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+
+.footer-text a:hover { color: var(--dawn); }
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .beat {
+    grid-template-columns: 56px 1fr;
+    gap: 0 1.2rem;
   }
 
-  hr {
-    margin: 2rem 0;
-    border: none;
-    border-top: 1px solid #ddd;
-  }
+  .sign--consider .sign-shape,
+  .sign--deadend .sign-shape { width: 36px; height: 36px; }
 
-  /* Section base */
+  .sign--direction .sign-shape,
+  .sign--imagine .sign-shape { width: 48px; height: 24px; }
+}
 
-  .section-title {
-    font-size: 1.1rem;
-    letter-spacing: -0.01em;
-  }
-  
-  .section p {
-    margin-left: 1.2rem;
-  }
-
-  .section {
-    margin-top: 3rem;
-  }
-  
-  /* Section label (icon + title) */
-  .section-title {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Specific section types */
-  
-  .consider .section-title::before {
-    content: "🧠 ";
-  }
-  
-  .imagine .section-title::before {
-    content: "✨ ";
-  }
-  
-  .conclusion .section-title::before {
-    content: "🏅 ";
-  }
-  
-  .dead-end .section-title::before {
-    content: "⛔ ";
-  }
-  
-  .direction .section-title::before {
-    content: "➡️ ";
-  }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

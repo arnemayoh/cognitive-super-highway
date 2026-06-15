@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Free Speech Actually Needs — The Cognitive Super Highway</title>
+  <meta name="description" content="The free speech debate asks who controls speech. That is the wrong question. The problem is infrastructure." />
+  <meta property="og:title" content="What Free Speech Actually Needs — The Cognitive Super Highway" />
+  <meta property="og:description" content="The free speech debate asks who controls speech. That is the wrong question. The problem is infrastructure." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/free-speech-and-lane-markings.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .exploration-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+    }
+    .exploration-breadcrumb {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .exploration-breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-breadcrumb a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-breadcrumb span { color: var(--lane); margin: 0 0.5rem; }
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+    .exploration-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+    .hero-visual {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+    .hero-visual svg { width: 100%; display: block; }
+    .exploration-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+    .exploration-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--signal);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+    }
+    .exploration-body p.muted { color: rgba(240,238,233,0.6); }
+    .exploration-body strong { font-weight: 500; }
+    .pull-quote {
+      border-left: 2px solid var(--dawn);
+      margin: 2.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.8rem;
+    }
+    .pull-quote p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      font-style: italic;
+      color: var(--signal) !important;
+      line-height: 1.6 !important;
+    }
+    .open-door {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--lane);
+      border-left: 2px solid var(--dawn);
+    }
+    .open-door p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem !important;
+      font-weight: 400;
+      color: rgba(240,238,233,0.55) !important;
+      margin: 0 !important;
+    }
+    .open-door a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+    .open-door a:hover { border-color: var(--dawn); }
+    .exploration-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--lane);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-nav .all-explorations { color: var(--dawn); border-color: rgba(245,166,35,0.4); }
+    @media (max-width: 600px) {
+      .exploration-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="exploration-header">
+    <p class="exploration-breadcrumb">
+      <a href="../index.html">The Cognitive Super Highway</a>
+      <span>/</span>
+      <a href="index.html">Explorations</a>
+      <span>/</span> What Free Speech Actually Needs
+    </p>
+    <h1 class="exploration-title">
+      The debate is about who controls speech.<br>
+      That is the wrong question.
+    </h1>
+    <p class="exploration-subtitle">
+      Both sides of the free speech debate share one assumption:
+      that the problem is permission. It isn't.
+      The problem is infrastructure.
+    </p>
+  </header>
+
+  <!-- ── HERO VISUAL ─────────────────────────────────────── -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Two highways side by side: one with all vehicles merged into one unmarked stream, one with lanes marking opinion, judgement, dissent and conjecture separately</title>
+      <desc>Left: a wide road with no lane markings, all types of speech merged and indistinguishable, some colliding. Right: the same road with four clearly marked lanes — personal opinion, institutional judgement, dissent, conjecture — each moving freely without collision.</desc>
+
+      <!-- Ground line -->
+      <line x1="40" y1="205" x2="640" y2="205"
+            stroke="#3D3D45" stroke-width="1" />
+
+      <!-- ════════════════════════════
+           LEFT: NO LANE MARKINGS
+           One undifferentiated stream
+           ════════════════════════════ -->
+      <g transform="translate(30, 20)">
+
+        <!-- Road surface -->
+        <rect x="0" y="60" width="240" height="120" rx="0"
+              fill="#2B2B33" opacity="0.7" />
+        <!-- Road edges -->
+        <line x1="0" y1="60"  x2="240" y2="60"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+        <line x1="0" y1="180" x2="240" y2="180"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+
+        <!-- No lane markings — just vehicles crammed together -->
+        <!-- Row 1 — mixed, overlapping -->
+        <rect x="10"  y="72" width="46" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <text x="33" y="84"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.5">opinion</text>
+
+        <rect x="62"  y="68" width="52" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.45" />
+        <text x="88" y="80"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.45">judgement</text>
+
+        <rect x="120" y="74" width="42" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.4" />
+        <text x="141" y="86"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.4">dissent</text>
+
+        <rect x="168" y="70" width="54" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.4" />
+        <text x="195" y="82"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.4">conjecture</text>
+
+        <!-- Row 2 — collision zone -->
+        <rect x="30"  y="100" width="52" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.45" />
+        <text x="56" y="112"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.45">judgement</text>
+
+        <rect x="76"  y="96" width="46" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.4" />
+        <text x="99" y="108"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.4">opinion</text>
+
+        <!-- Collision X marks -->
+        <line x1="72" y1="100" x2="84" y2="112"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+        <line x1="84" y1="100" x2="72" y2="112"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+
+        <rect x="130" y="102" width="54" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.35" />
+        <text x="157" y="114"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.35">conjecture</text>
+
+        <!-- Row 3 -->
+        <rect x="14"  y="132" width="46" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.4" />
+        <text x="37" y="144"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.4">dissent</text>
+
+        <rect x="66"  y="128" width="52" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.35" />
+        <text x="92" y="140"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.35">opinion</text>
+
+        <line x1="62"  y1="132" x2="74" y2="144"
+              stroke="#9A9896" stroke-width="1" opacity="0.25" />
+        <line x1="74"  y1="132" x2="62" y2="144"
+              stroke="#9A9896" stroke-width="1" opacity="0.25" />
+
+        <rect x="124" y="134" width="52" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.35" />
+        <text x="150" y="146"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.35">judgement</text>
+
+        <rect x="182" y="130" width="42" height="18" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.3" />
+        <text x="203" y="142"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="400"
+              text-anchor="middle" fill="#9A9896" opacity="0.3">dissent</text>
+
+        <!-- Row 4: chaos label area -->
+        <rect x="40"  y="160" width="54" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.25" />
+        <rect x="104" y="158" width="46" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.2" />
+        <rect x="158" y="162" width="52" height="14" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.2" />
+      </g>
+
+      <!-- Left label -->
+      <text x="150" y="222"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#9A9896" opacity="0.55">NO LANE MARKINGS</text>
+
+      <!-- ── VS ───────────────────────────────────────────── -->
+      <text x="340" y="128"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="11" font-weight="300"
+            text-anchor="middle"
+            fill="#3D3D45" opacity="0.8">vs</text>
+
+      <!-- ════════════════════════════
+           RIGHT: LANE MARKINGS
+           Four epistemic lanes
+           ════════════════════════════ -->
+      <g transform="translate(410, 20)">
+
+        <!-- Road surface -->
+        <rect x="0" y="60" width="240" height="120" rx="0"
+              fill="#2B2B33" opacity="0.7" />
+        <!-- Road edges -->
+        <line x1="0" y1="60"  x2="240" y2="60"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+        <line x1="0" y1="180" x2="240" y2="180"
+              stroke="#9A9896" stroke-width="1" opacity="0.3" />
+
+        <!-- Lane dividers -->
+        <line x1="60"  y1="60" x2="60"  y2="180"
+              stroke="#F0EEE9" stroke-width="0.6"
+              stroke-dasharray="8 5" opacity="0.15" />
+        <line x1="120" y1="60" x2="120" y2="180"
+              stroke="#F0EEE9" stroke-width="0.6"
+              stroke-dasharray="8 5" opacity="0.15" />
+        <line x1="180" y1="60" x2="180" y2="180"
+              stroke="#F0EEE9" stroke-width="0.6"
+              stroke-dasharray="8 5" opacity="0.15" />
+
+        <!-- Lane labels at top -->
+        <text x="30"  y="74"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="6.5" font-weight="600"
+              letter-spacing="0.08em" text-anchor="middle"
+              fill="#9A9896" opacity="0.5">OPINION</text>
+        <text x="90"  y="74"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="6.5" font-weight="600"
+              letter-spacing="0.08em" text-anchor="middle"
+              fill="#F5A623" opacity="0.65">JUDGEMENT</text>
+        <text x="150" y="74"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="6.5" font-weight="600"
+              letter-spacing="0.08em" text-anchor="middle"
+              fill="#9A9896" opacity="0.5">DISSENT</text>
+        <text x="210" y="74"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="6.5" font-weight="600"
+              letter-spacing="0.08em" text-anchor="middle"
+              fill="#9A9896" opacity="0.45">CONJECTURE</text>
+
+        <!-- Lane 1: OPINION — moving freely -->
+        <rect x="8"  y="88"  width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.55" />
+        <rect x="8"  y="116" width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <rect x="8"  y="148" width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.45" />
+        <!-- TTL marker on opinion -->
+        <text x="30" y="161"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="5.5" font-weight="600"
+              text-anchor="middle"
+              fill="#9A9896" opacity="0.4">TTL</text>
+
+        <!-- Lane 2: JUDGEMENT — amber, weighted -->
+        <rect x="68" y="84"  width="44" height="20" rx="3"
+              fill="none" stroke="#F5A623" stroke-width="1.2" opacity="0.6" />
+        <rect x="68" y="118" width="44" height="20" rx="3"
+              fill="none" stroke="#F5A623" stroke-width="1.2" opacity="0.55" />
+        <rect x="68" y="152" width="44" height="20" rx="3"
+              fill="none" stroke="#F5A623" stroke-width="1" opacity="0.45" />
+
+        <!-- Lane 3: DISSENT — present, distinct -->
+        <rect x="128" y="90"  width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <rect x="128" y="120" width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="1" opacity="0.45" />
+        <!-- Dissent marker: small flag -->
+        <line x1="150" y1="120" x2="150" y2="112"
+              stroke="#9A9896" stroke-width="0.8" opacity="0.35" />
+        <polygon points="150,112 158,115 150,118"
+                 fill="#9A9896" opacity="0.25" />
+
+        <!-- Lane 4: CONJECTURE — dashed outline, exploratory -->
+        <rect x="188" y="92"  width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.4" />
+        <rect x="188" y="124" width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.35" />
+        <rect x="188" y="156" width="44" height="16" rx="3"
+              fill="none" stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 2" opacity="0.3" />
+
+        <!-- No collisions — clear movement indicators -->
+        <line x1="52" y1="96"  x2="60" y2="96"
+              stroke="#9A9896" stroke-width="0.6" opacity="0.25" />
+        <line x1="112" y1="94" x2="120" y2="94"
+              stroke="#F5A623" stroke-width="0.6" opacity="0.3" />
+      </g>
+
+      <!-- Right label -->
+      <text x="530" y="222"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#F5A623" opacity="0.75">EPISTEMIC LANES</text>
+
+    </svg>
+  </div>
+
+  <!-- ── BODY CONTENT ────────────────────────────────────── -->
+  <main class="exploration-body">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        The free speech debate has two sides. One says: more speech is always better, restrict nothing. The other says: some speech causes harm and must be controlled. Both sides have been arguing for decades. Neither is winning. Neither will.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Because both sides share the same assumption: that the problem is <strong>permission</strong>. Who gets to speak. What is allowed. Who decides.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        Framing the problem as permission leads to a dead end — for the same reason that framing traffic as a control problem does. The question of who controls it is the wrong question. The system doesn't fail because people are driving. It fails because there is no shared structure for how driving happens.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        A personal opinion and an institutional judgement currently travel the same way. A considered dissent and an unverified rumour look identical in the feed. An experimental conjecture — something offered tentatively, meant to be tested — hardens into received wisdom because nothing attached an expiry to it.
+      </p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"The problem is not too much speech or too little. The problem is that speech has no lane markings."</p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Not all claims have equal weight. Courts have known this for centuries — they distinguish testimony from argument, argument from judgement, judgement from dissent. Science has known it too — a hypothesis is marked differently from a finding, a finding differently from a consensus. These distinctions are not censorship. They are infrastructure.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <div class="beat-text">
+        <p>Consider what lane markings for speech might look like:</p>
+        <ul>
+          <li><strong>Personal opinion</strong> — one person's view, allowed to evolve, not permanent</li>
+          <li><strong>Institutional judgement</strong> — carries the weight of a body, requires accountability</li>
+          <li><strong>Dissent</strong> — a deliberate disagreement, part of the record, not erased by consensus</li>
+          <li><strong>Conjecture</strong> — offered for exploration, marked as provisional, expected to be tested</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        None of these lanes restrict what you can say. They make visible <strong>what kind of thing you are saying</strong>. A driver doesn't lose freedom by driving in a lane. They gain the ability to move faster and more safely — because everyone else knows what to expect.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        A space where conjecture is explicitly welcome — not despite being marked as conjecture, but <strong>because</strong> it is. Where dissent is preserved as part of the record rather than flattened by consensus. Where a personal opinion can be retracted or updated without the original disappearing into an unmarked archive. Where institutional judgements carry their reasoning visibly, so they can be contested on their merits.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <p class="beat-text">
+        This is not a content moderation proposal. It is an infrastructure proposal. The debate about who controls speech will continue indefinitely — because it is the wrong debate. The debate worth having is: <strong>what structure makes expression navigable for everyone who encounters it?</strong>
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        Free speech doesn't need less restriction or more restriction. It needs the same thing traffic needed: infrastructure that makes different kinds of movement visible, navigable, and accountable — without controlling where anyone is going.
+      </p>
+    </div>
+
+    <!-- ── OPEN DOOR ──────────────────────────────────────── -->
+    <div class="open-door">
+      <p>This raises a question for you?
+        <a href="mailto:questions@cognitivesuperhighway.org">Send it.</a>
+        Selected questions shape future explorations.</p>
+    </div>
+
+    <!-- ── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="exploration-nav">
+      <a href="what-we-learned-from-traffic.html">← What We Learned from Traffic</a>
+      <a href="index.html" class="all-explorations">All Explorations</a>
+      <a href="ashtray-problem.html">The Ashtray Problem →</a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
+
+</body>
+</html>

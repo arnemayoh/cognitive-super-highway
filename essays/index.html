@@ -2,64 +2,546 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Essays — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>Essays — The Cognitive Super Highway</title>
+  <meta name="description" content="Before the volume, a reason to read. Three arguments for why human-AI collaboration is worth building infrastructure for." />
+  <meta property="og:title" content="Essays — The Cognitive Super Highway" />
+  <meta property="og:description" content="Before the volume, a reason to read. Three arguments for why human-AI collaboration is worth building infrastructure for." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/essays/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    /* ── PAGE HEADER ─────────────────────────────────────── */
+    .page-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 0;
+    }
+
+    .page-header-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 1rem;
+    }
+
+    .page-header-eyebrow a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      transition: color 0.2s;
+    }
+
+    .page-header-eyebrow a:hover { color: var(--dawn); }
+
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1.2rem;
+    }
+
+    .page-intro {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.6);
+      line-height: 1.85;
+      max-width: 580px;
+      margin-bottom: 4rem;
+    }
+
+    /* ── SECTION LABELS ──────────────────────────────────── */
+    .section-label {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      padding: 0 2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dawn);
+    }
+
+    /* ── WHY IT'S WORTH IT — motivation beats ────────────── */
+    .motivation-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .motivation-beat {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 2rem;
+      margin-bottom: 0;
+      align-items: stretch;
+      border-top: 1px solid var(--lane);
+    }
+
+    .motivation-beat:last-child {
+      border-bottom: 1px solid var(--lane);
+    }
+
+    .motivation-sign {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem 0 2rem;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .motivation-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--dawn);
+      opacity: 0.5;
+      line-height: 1;
+    }
+
+    .motivation-content {
+      padding: 2rem 0;
+    }
+
+    .motivation-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--signal);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .motivation-body {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.65);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      max-width: 540px;
+    }
+
+    .motivation-pull {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--signal);
+      opacity: 0.8;
+      border-left: 2px solid var(--dawn);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .motivation-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .motivation-link:hover {
+      color: var(--dawn);
+      border-color: var(--dawn);
+    }
+
+    /* ── LANE DIVIDER ────────────────────────────────────── */
+    .lane-divider {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lane-divider::before,
+    .lane-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--lane);
+    }
+
+    .lane-divider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dawn);
+      opacity: 0.5;
+    }
+
+    /* ── DEEPER READING ──────────────────────────────────── */
+    .deeper-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .deeper-intro {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.85;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    .deeper-list {
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .deeper-item {
+      border-top: 1px solid var(--lane);
+      padding: 1.4rem 0;
+    }
+
+    .deeper-item:last-child {
+      border-bottom: 1px solid var(--lane);
+    }
+
+    .deeper-item a {
+      text-decoration: none;
+      display: block;
+    }
+
+    .deeper-item a:hover .deeper-item-title {
+      color: var(--dawn);
+    }
+
+    .deeper-item-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--signal);
+      margin-bottom: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .deeper-item-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.45);
+      line-height: 1.6;
+    }
+
+    .deeper-item-tag {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--lane);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── FULL ARCHIVE LINK ───────────────────────────────── */
+    .archive-link {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 2rem;
+    }
+
+    .archive-link p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.4);
+      line-height: 1.8;
+      margin-bottom: 0.6rem;
+    }
+
+    .archive-link a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .archive-link a:hover {
+      color: var(--dawn);
+      border-color: var(--dawn);
+    }
+
+    /* ── CONTRIBUTE CLOSER ───────────────────────────────── */
+    .contribute-closer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+      border-top: 1px solid var(--lane);
+      margin-top: 3rem;
+    }
+
+    .contribute-closer p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.5);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .contribute-closer a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .contribute-closer a:hover { border-color: var(--dawn); }
+
+    @media (max-width: 600px) {
+      .motivation-beat {
+        grid-template-columns: 48px 1fr;
+        gap: 0 1rem;
+      }
+    }
+  </style>
+</head>
 <body>
 
-  <div class="hero">
-    <h1>Essays</h1>
+  <!-- ── PAGE HEADER ─────────────────────────────────────── -->
+  <header class="page-header">
+    <p class="page-header-eyebrow">
+      <a href="index.html">The Cognitive Super Highway</a>
+      &nbsp;/&nbsp; Essays
+    </p>
+    <h1 class="page-title">
+      Before the volume,<br>a reason to read.
+    </h1>
+    <p class="page-intro">
+      There is serious work behind this site — over two hundred pages of research,
+      essays, and proposals. Most people won't read all of it. They don't need to.
+      What they need first is a reason to care. Three arguments follow.
+      Then a door into the deeper material for those ready.
+    </p>
+  </header>
 
-    <p class="hero-lead">
-      Structured explorations of emerging gaps in systems, governance, and shared understanding.
+  <!-- ── SECTION 1: WHY IT'S WORTH IT ──────────────────── -->
+  <p class="section-label">Why collaboration is worth building for</p>
+
+  <section class="motivation-section">
+
+    <!-- BEAT 1: Human reasoning expands meaning -->
+    <div class="motivation-beat">
+      <div class="motivation-sign">
+        <span class="motivation-number">1</span>
+      </div>
+      <div class="motivation-content">
+        <h2 class="motivation-title">You bring something AI cannot.</h2>
+        <p class="motivation-body">
+          AI reasoning narrows possibilities — it converges, selects, optimises.
+          Human reasoning does the opposite. It expands the space of meaning before
+          converging. It generates the inspiration that becomes intent.
+          That moment — when an idea appears before it is fully understood —
+          is irreducibly human. No statistical inference produces it.
+        </p>
+        <p class="motivation-pull">
+          "The moment inspiration becomes intent, responsibility begins."
+        </p>
+        <p class="motivation-body">
+          This is not a consolation prize for humans in an AI world.
+          It is the description of a genuinely complementary system —
+          one that only works if the human side remains active,
+          visible, and capable of carrying intention forward.
+        </p>
+        <a href="https://auditedstate.app/research/publications/essays/human-reasoning-expands-meaning-ai-reasoning-narrows-possibilities.html"
+           class="motivation-link" target="_blank">
+          Read: Human Reasoning Expands Meaning →
+        </a>
+      </div>
+    </div>
+
+    <!-- BEAT 2: Collaborative conjecture -->
+    <div class="motivation-beat">
+      <div class="motivation-sign">
+        <span class="motivation-number">2</span>
+      </div>
+      <div class="motivation-content">
+        <h2 class="motivation-title">Dialogue, not delegation.</h2>
+        <p class="motivation-body">
+          Most people use AI the way they use a search engine —
+          ask a question, receive an answer, move on.
+          The reasoning that produced the answer disappears.
+          The understanding doesn't accumulate.
+        </p>
+        <p class="motivation-pull">
+          "Instead of asking systems to produce finished outputs,
+          humans engage in an iterative dialogue that develops
+          the reasoning itself."
+        </p>
+        <p class="motivation-body">
+          Collaborative conjecture is a different practice.
+          Each exchange clarifies assumptions, surfaces implications,
+          and improves the structure of the argument —
+          producing reasoning that can be preserved, traced, and carried forward.
+          Not a faster answer. A better question.
+        </p>
+        <a href="https://auditedstate.app/concepts/collaborative-conjecture.html"
+           class="motivation-link" target="_blank">
+          Read: Collaborative Conjecture →
+        </a>
+      </div>
+    </div>
+
+    <!-- BEAT 3: Wealth of Understanding / economic argument -->
+    <div class="motivation-beat">
+      <div class="motivation-sign">
+        <span class="motivation-number">3</span>
+      </div>
+      <div class="motivation-content">
+        <h2 class="motivation-title">Every contribution compounds forward.</h2>
+        <p class="motivation-body">
+          There is an invisible tax on every organisation, institution,
+          and civilisation that does not preserve its reasoning.
+          When a new team inherits a project, a new administration inherits a policy,
+          a new generation inherits a problem — they don't inherit understanding.
+          They inherit fragments. And they pay the reconstruction cost
+          before they can begin contributing anything new.
+        </p>
+        <p class="motivation-pull">
+          "Civilization advances when we lower the cost of inheriting reasoning."
+        </p>
+        <p class="motivation-body">
+          The economic argument for this infrastructure is not abstract.
+          It is the difference between a contribution that disappears
+          and one that becomes part of the foundation the next person builds on.
+          Even a small contribution — clearly reasoned, visible, attributed —
+          reduces the reconstruction cost for everyone who comes after.
+          That is a real return. It compounds.
+        </p>
+        <a href="https://auditedstate.app/research/publications/essays/wealth-of-understanding-invisible-opportunity-cost.html"
+           class="motivation-link" target="_blank">
+          Read: The Wealth of Understanding →
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="lane-divider"><div class="lane-divider-dot"></div></div>
+
+  <!-- ── SECTION 2: DEEPER READING ─────────────────────── -->
+  <p class="section-label">For those ready to go further</p>
+
+  <section class="deeper-section">
+
+    <p class="deeper-intro">
+      The following essays are entry points into the research —
+      each one matched to a theme from the explorations.
+      They ask more of the reader. They also give more back.
     </p>
 
-    <p class="hero-lead">
-      These essays aim to connect intuition with structure—bridging observation and application.
-    </p>
-  </div>
+    <ul class="deeper-list">
 
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Explorations help us recognize patterns.
-    </p>
-    <p>
-      Essays attempt to follow them.
-    </p>
-  </div>
+      <li class="deeper-item">
+        <a href="https://auditedstate.app/research/publications/essays/traffic-of-reasoning.html"
+           target="_blank">
+          <span class="deeper-item-tag">The problem itself</span>
+          <p class="deeper-item-title">The Traffic of Reasoning</p>
+          <p class="deeper-item-desc">Uses traffic infrastructure as a civilisational analogy for continuity-preserving reasoning systems. The natural next step after the explorations.</p>
+        </a>
+      </li>
 
-  <div class="section">
+      <li class="deeper-item">
+        <a href="https://auditedstate.app/research/publications/essays/why-courts-reconstruct-thinking-collective-reasoning.html"
+           target="_blank">
+          <span class="deeper-item-tag">How meaning travels</span>
+          <p class="deeper-item-title">Why Courts Reconstruct Thinking</p>
+          <p class="deeper-item-desc">Courts routinely attempt to reconstruct the reasoning behind decisions — because it was never preserved at the time. What that reveals about collective reasoning.</p>
+        </a>
+      </li>
 
-    <h2>
-      <a href="governance-gap.html">
-        The Governance Gap in AI: From Control to Continuity
+      <li class="deeper-item">
+        <a href="https://auditedstate.app/research/publications/essays/infrastructure-of-reasoning.html"
+           target="_blank">
+          <span class="deeper-item-tag">Infrastructure & governance</span>
+          <p class="deeper-item-title">The Infrastructure of Reasoning</p>
+          <p class="deeper-item-desc">Defines the missing layer — what would need to exist for reasoning to be preserved, traceable, and governable across systems and time.</p>
+        </a>
+      </li>
+
+      <li class="deeper-item">
+        <a href="https://auditedstate.app/research/publications/essays/why-intention-matters-for-judgement.html"
+           target="_blank">
+          <span class="deeper-item-tag">Governance & law</span>
+          <p class="deeper-item-title">Why Intention Matters for Judgement</p>
+          <p class="deeper-item-desc">Courts do not judge actions alone — they require intention. Modern systems produce outcomes without preserving the intention that led to them. A foundational question for any system design.</p>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Full archive -->
+    <div class="archive-link">
+      <p>
+        There is more — substantially more. Position releases, a backbone narrative sequence,
+        papers, proposals, and an ongoing series on interpretation, drift, and cognitive continuity.
+      </p>
+      <a href="https://auditedstate.app/research/publications/" target="_blank">
+        Full publications archive at auditedstate.app →
       </a>
-    </h2>
+    </div>
 
+  </section>
+
+  <!-- ── CONTRIBUTE CLOSER ──────────────────────────────── -->
+  <div class="contribute-closer">
     <p>
-      A structural analysis of current AI governance approaches,
-      identifying a missing layer between control and accountability:
-      the continuity of reasoning, intention, and responsibility across system evolution.
+      Reading is a contribution. A question sent is a contribution.
+      A perspective from a different field — governance, education, law,
+      design, science — is exactly what this space needs.
     </p>
-
-  </div>
-
-  <hr>
-
-  <div class="footnote">
     <p>
-      Continue exploring:
-      <a href="../explorations/index.html">Explorations</a>
-    </p>
-
-    <p>
-      Return:
-      <a href="../index.html">The Cognitive Super Highway</a>
+      <a href="contribute.html">Find out how to contribute →</a>
     </p>
   </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
 
 </body>
 </html>

@@ -2,129 +2,346 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Explorations — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>Explorations — The Cognitive Super Highway</title>
+  <meta name="description" content="Eight explorations into why understanding fails to continue — and what infrastructure would allow it to." />
+  <meta property="og:title" content="Explorations — The Cognitive Super Highway" />
+  <meta property="og:description" content="Eight explorations into why understanding fails to continue — and what infrastructure would allow it to." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    /* ── PAGE HEADER ─────────────────────────────────────── */
+    .page-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 1rem;
+    }
+
+    .page-header-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 1rem;
+    }
+
+    .page-header-eyebrow a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      transition: color 0.2s;
+    }
+
+    .page-header-eyebrow a:hover { color: var(--dawn); }
+
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1.2rem;
+    }
+
+    .page-intro {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.65);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* ── EXPLORATION ENTRIES ──────────────────────────────── */
+    .exploration-group {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* The beat sign + group intro */
+    .group-beat {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0 2rem;
+      margin-bottom: 2rem;
+      align-items: start;
+      padding-top: 3rem;
+    }
+
+    .group-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 0.4rem;
+    }
+
+    .group-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.6);
+      line-height: 1.7;
+    }
+
+    /* Exploration rows within a group */
+    .exploration-list {
+      list-style: none;
+      margin-left: 112px; /* aligns with beat-text column (80px sign + 2rem gap) */
+      margin-bottom: 1rem;
+    }
+
+    .exploration-item {
+      border-top: 1px solid var(--lane);
+      padding: 1.4rem 0;
+      transition: border-color 0.2s;
+    }
+
+    .exploration-item:last-child {
+      border-bottom: 1px solid var(--lane);
+    }
+
+    .exploration-item a {
+      text-decoration: none;
+      display: block;
+    }
+
+    .exploration-item a:hover .exploration-title {
+      color: var(--dawn);
+    }
+
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--signal);
+      margin-bottom: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .exploration-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── CONTRIBUTE CLOSER ────────────────────────────────── */
+    .contribute-closer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+      padding-left: calc(2rem + 112px); /* align with exploration entries */
+    }
+
+    .contribute-closer p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.5);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .contribute-closer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contribute-closer a:hover {
+      color: var(--dawn);
+      border-color: var(--dawn);
+    }
+
+    @media (max-width: 600px) {
+      .group-beat {
+        grid-template-columns: 56px 1fr;
+        gap: 0 1.2rem;
+      }
+
+      .exploration-list {
+        margin-left: 0;
+      }
+
+      .contribute-closer {
+        padding-left: 2rem;
+      }
+    }
+  </style>
+</head>
 <body>
 
-  <div class="hero">
-    <h1>Explorations</h1>
-
-    <p class="hero-lead">
-      A set of reflections exploring different aspects of the Cognitive Super Highway.
+  <!-- ── PAGE HEADER ─────────────────────────────────────── -->
+  <header class="page-header">
+    <p class="page-header-eyebrow">
+      <a href="../index.html">The Cognitive Super Highway</a>
+      &nbsp;/&nbsp; Explorations
     </p>
-
-    <p class="hero-lead">
-      They are not final. They are not complete.
-    </p>
-
-    <p class="hero-lead">
+    <h1 class="page-title">Different people enter<br>from different directions.</h1>
+    <p class="page-intro">
+      These explorations are not final. They are not complete.<br>
       They offer different entry points into the same space.
     </p>
+  </header>
+
+  <!-- ── GROUP 1: THE PROBLEM ITSELF ────────────────────── -->
+  <section class="exploration-group">
+
+    <div class="group-beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <div>
+        <p class="group-label">The problem itself</p>
+        <p class="group-desc">
+          The core idea, the traffic metaphor that makes it visible,
+          and the most contested public debate it reframes.
+          Start here if this is new to you.
+        </p>
+      </div>
+    </div>
+
+    <ul class="exploration-list">
+      <li class="exploration-item">
+        <a href="start-here.html">
+          <p class="exploration-title">Start Here</p>
+          <p class="exploration-desc">A gentle entry into the core idea: the real problem is not lack of intelligence, but the difficulty of continuing understanding.</p>
+        </a>
+      </li>
+      <li class="exploration-item">
+        <a href="what-we-learned-from-traffic.html">
+          <p class="exploration-title">What We Learned from Traffic</p>
+          <p class="exploration-desc">On how the emergence of traffic required not better vehicles, but infrastructure for interaction.</p>
+        </a>
+      </li>
+      <li class="exploration-item">
+        <a href="free-speech-and-lane-markings.html">
+          <p class="exploration-title">What Free Speech Actually Needs</p>
+          <p class="exploration-desc">Both sides of the free speech debate share one assumption: that the problem is permission. It isn't. The problem is that speech has no lane markings.</p>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- ── GROUP 2: HOW MEANING TRAVELS ───────────────────── -->
+  <section class="exploration-group">
+
+    <div class="group-beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <div>
+        <p class="group-label">How meaning travels — or doesn't</p>
+        <p class="group-desc">
+          Objects, tools, and intentions carry meaning forward.
+          Until they don't — and nobody notices until it's gone.
+        </p>
+      </div>
+    </div>
+
+    <ul class="exploration-list">
+      <li class="exploration-item">
+        <a href="ashtray-problem.html">
+          <p class="exploration-title">The Ashtray Problem</p>
+          <p class="exploration-desc">On how ordinary objects carry signal, intention, and meaning — and what happens when the shared justification for them disappears.</p>
+        </a>
+      </li>
+      <li class="exploration-item">
+        <a href="story-of-a-tool.html">
+          <p class="exploration-title">The Story of a Tool</p>
+          <p class="exploration-desc">On how intention and meaning are lost as ideas evolve — and why responsibility fragments when reasoning does not travel.</p>
+        </a>
+      </li>
+      <li class="exploration-item">
+        <a href="the-skill-of-intention.html">
+          <p class="exploration-title">The Skill of Intention</p>
+          <p class="exploration-desc">From maps and satnav to AI prompts: what becomes possible when expressing intention matters more than navigating complexity alone.</p>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- ── GROUP 3: INFRASTRUCTURE & GOVERNANCE ───────────── -->
+  <section class="exploration-group">
+
+    <div class="group-beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <div>
+        <p class="group-label">Infrastructure &amp; governance</p>
+        <p class="group-desc">
+          What changes when reasoning becomes something systems
+          can carry — and who is responsible for building that infrastructure?
+        </p>
+      </div>
+    </div>
+
+    <ul class="exploration-list">
+      <li class="exploration-item">
+        <a href="attribution-and-value.html">
+          <p class="exploration-title">Attribution, Value, and the End of Secrecy</p>
+          <p class="exploration-desc">On how reasoning became something we protect instead of something we build on — and what changes if attribution becomes part of the infrastructure.</p>
+        </a>
+      </li>
+      <li class="exploration-item">
+        <a href="control-vs-alignment.html">
+          <p class="exploration-title">Control vs Alignment</p>
+          <p class="exploration-desc">On the difference between controlling outcomes and creating the shared structure that makes coordinated movement possible.</p>
+        </a>
+      </li>
+      <li class="exploration-item">
+        <a href="governance-continuity-gap.html">
+          <p class="exploration-title">Governance Continuity Gap</p>
+          <p class="exploration-desc">Why current governance frameworks can evaluate decisions but struggle to follow the reasoning behind them across time — and what continuity infrastructure would change.</p>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- ── CLOSER ──────────────────────────────────────────── -->
+  <div class="contribute-closer">
+    <p>
+      Some contributors are already working on these questions deliberately.<br>
+      One example: <a href="https://auditedstate.app">auditedstate.app</a>
+    </p>
+    <p>
+      <a href="../contribute.html">Contribute to this space →</a>
+    </p>
   </div>
 
-  <div class="nav">
-    <a href="../index.html">Home</a>
-    <span> · </span>
-    <a href="../contributors.html">Contributors</a>
-    <span> · </span>
-    <a href="../contribute.html">Contribute</a>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Different people enter this space from different directions.
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
     </p>
-    <p>
-      If you are new to these ideas, you may want to begin with <a href="start-here.html">Start Here</a>.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="start-here.html">Start Here</a></h2>
-    <p>
-      A gentle entry into the core idea:
-      that the real problem is not lack of intelligence, but the difficulty of continuing understanding.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="ashtray-problem.html">The Ashtray Problem</a></h2>
-    <p>
-      On how ordinary objects carry signal, intention, and meaning—
-      and what happens when the shared justification for them disappears.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="the-skill-of-intention.html">The Skill of Intention</a></h2>
-    <p>
-      From maps and satnav to AI prompts:
-      what becomes possible when expressing intention matters more than navigating complexity alone.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="attribution-and-value.html">Attribution, Value, and the End of Secrecy</a></h2>
-    <p>
-      On how reasoning became something we protect instead of something we build on—
-      and what changes if attribution becomes part of the infrastructure.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="story-of-a-tool.html">The Story of a Tool</a></h2>
-    <p>
-      On how intention and meaning are lost as ideas evolve—
-      and why responsibility fragments when reasoning does not travel.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="control-vs-alignment.html">Control vs Alignment</a></h2>
-    <p>
-      On the difference between controlling outcomes and creating the shared structure
-      that makes coordinated movement possible.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="governance-continuity-gap.html">Governance Continuity Gap</a></h2>
-    <p>
-      On why current governance frameworks can evaluate decisions—
-      but struggle to follow the reasoning behind them across time.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2><a href="what-we-learned-from-traffic.html">What We Learned from Traffic</a></h2>
-    <p>
-      On how the emergence of traffic required not better vehicles,
-      but infrastructure for interaction.
-    </p>
-  </div>
-
-
-  <hr>
-
-  <div class="footnote">
-    <p>
-      Some contributors are working deliberately on these questions.
-    </p>
-
-    <p>
-      One example:<br>
-      <a href="https://auditedstate.app" target="_blank">auditedstate.app</a>
-    </p>
-
-    <p>
-      Return:
-      <a href="../index.html">The Cognitive Super Highway</a>
-    </p>
-  </div>
+  </footer>
 
 </body>
 </html>

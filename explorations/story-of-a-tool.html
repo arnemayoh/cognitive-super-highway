@@ -2,279 +2,519 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>The Story of a Tool — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>The Story of a Tool — The Cognitive Super Highway</title>
+  <meta name="description" content="From fireworks to handguns: how intention leaks at every transformation when reasoning does not travel with what we create." />
+  <meta property="og:title" content="The Story of a Tool — The Cognitive Super Highway" />
+  <meta property="og:description" content="From fireworks to handguns: how intention leaks at every transformation when reasoning does not travel with what we create." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/story-of-a-tool.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    .exploration-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+    }
+
+    .exploration-breadcrumb {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .exploration-breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exploration-breadcrumb a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-breadcrumb span { color: var(--lane); margin: 0 0.5rem; }
+
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+
+    .exploration-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-visual {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+
+    .hero-visual svg { width: 100%; display: block; }
+
+    .exploration-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+
+    .exploration-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--signal);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+    }
+
+    .exploration-body p.muted { color: rgba(240,238,233,0.6); }
+    .exploration-body strong { font-weight: 500; }
+
+    .pull-quote {
+      border-left: 2px solid var(--dawn);
+      margin: 2.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.8rem;
+    }
+
+    .pull-quote p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      font-style: italic;
+      color: var(--signal) !important;
+      line-height: 1.6 !important;
+    }
+
+    .open-door {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--lane);
+      border-left: 2px solid var(--dawn);
+    }
+
+    .open-door p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem !important;
+      font-weight: 400;
+      color: rgba(240,238,233,0.55) !important;
+      margin: 0 !important;
+    }
+
+    .open-door a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .open-door a:hover { border-color: var(--dawn); }
+
+    .exploration-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--lane);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-nav .all-explorations { color: var(--dawn); border-color: rgba(245,166,35,0.4); }
+
+    @media (max-width: 600px) {
+      .exploration-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
 <body>
 
-  <div class="hero">
-    <h1>The Story of a Tool</h1>
-
-    <p class="hero-lead">
-      What happens when intention does not travel with what we create?
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      An idea emerges.
-    </p>
-    <p>
-      Gunpowder.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Its early use is simple:
-    </p>
-    <p>
-      celebration<br>
-      fireworks<br>
-      signaling
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      A moment of human expression.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Then the idea evolves.
-    </p>
-    <p>
-      The same material becomes:
-    </p>
-    <p>
-      a cannon<br>
-      a weapon<br>
-      a tool for warfare
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      The capability expands.
-    </p>
-    <p>
-      The intention shifts.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Over time, the tool becomes smaller.
-    </p>
-    <p>
-      More accessible.
-      More personal.
-    </p>
-    <p>
-      A handgun.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      At each step, something changes:
-    </p>
-    <p>
-      not just the tool—
-      but the meaning attached to it.
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      But the original reasoning does not travel.
-    </p>
-    <p>
-      The intentions behind each transformation
-      are not carried forward in a structured way.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      So when harm occurs—
-      when someone uses the tool to cause damage—
-      the question becomes:
-    </p>
-    <p>
-      who is responsible?
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      The inventor of the material?
-    </p>
-    <p>
-      The designer of the weapon?
-    </p>
-    <p>
-      The manufacturer?
-    </p>
-    <p>
-      The user?
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      Without continuity of reasoning,
-      responsibility fragments.
-    </p>
-    <p>
-      It becomes debated,
-      reassigned,
-      and simplified.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      We attach warnings.
-    </p>
-    <p>
-      We create laws.
-    </p>
-    <p>
-      We attempt to regulate outcomes.
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      But these are responses after the fact.
-    </p>
-    <p>
-      They do not restore what is missing:
-      the ability to follow intention and reasoning
-      across transformations.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Most governance appears after the event.
-    </p>
-    <p>
-      We regulate outcomes.
-      We assign responsibility.
-      We attempt to contain harm.
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      But by then, the chain is already broken.
-    </p>
-    <p>
-      The original intentions, decisions, and transformations
-      are no longer visible as a continuous structure.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      This is not just a problem of tools.
-    </p>
-    <p>
-      It is a problem of timing.
-    </p>
-  </div>
-
-  <div class="section direction">
-    <div class="section-title">Direction</div>
-    <p>
-      What is missing is a form of governance
-      that exists before the event.
-    </p>
-    <p>
-      Not as restriction—
-      but as structure.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      A system where:
-    </p>
-    <p>
-      intention is visible<br>
-      reasoning can be followed<br>
-      known risks are carried forward
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      Then governance is no longer something
-      applied only after failure.
-    </p>
-    <p>
-      It becomes part of how systems evolve.
-    </p>
-  </div>
-
-  <div class="section conclusion">
-    <div class="section-title">Conclusion</div>
-    <p>
-      The problem is not that tools evolve.
-    </p>
-    <p>
-      It is that meaning does not travel with them.
-    </p>
-  </div>
-
-  <div class="section conclusion">
-    <div class="section-title">Conclusion</div>
-    <p>
-      We are very good at creating.
-    </p>
-    <p>
-      We are much less capable of carrying forward
-      why we created in the first place.
-    </p>
-  </div>
-
-  <hr>
-
-  <div class="footnote">
-    <p>
-      Continue exploring:
-      <a href="index.html">Explorations</a>
-    </p>
-
-    <p>
-      Return:
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="exploration-header">
+    <p class="exploration-breadcrumb">
       <a href="../index.html">The Cognitive Super Highway</a>
+      <span>/</span>
+      <a href="index.html">Explorations</a>
+      <span>/</span> The Story of a Tool
     </p>
+
+    <h1 class="exploration-title">
+      The tool evolved.<br>The intention did not travel with it.
+    </h1>
+    <p class="exploration-subtitle">
+      On how meaning leaks at every transformation — and why responsibility
+      fragments when reasoning does not carry forward.
+    </p>
+  </header>
+
+  <!-- ── HERO VISUAL ─────────────────────────────────────── -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Three stages of a tool: firework, cannon, handgun — intention fading at each step</title>
+      <desc>Three objects in sequence connected by arrows. Above each object, an intention marker grows progressively fainter. A thread labelled intention at the start ends in a question mark at the end.</desc>
+
+      <!-- ── INTENTION THREAD (fraying across top) ───────── -->
+      <!-- Solid segment: firework → cannon -->
+      <line x1="88" y1="54" x2="280" y2="54"
+            stroke="#F5A623" stroke-width="1.2" opacity="0.7" />
+      <!-- Fraying segment: cannon → handgun -->
+      <line x1="280" y1="54" x2="460" y2="54"
+            stroke="#F5A623" stroke-width="1.2" opacity="0.35"
+            stroke-dasharray="6 4" />
+      <!-- Ghost tail -->
+      <line x1="460" y1="54" x2="580" y2="54"
+            stroke="#F5A623" stroke-width="1" opacity="0.12"
+            stroke-dasharray="3 5" />
+
+      <!-- "intention" label at thread start -->
+      <text x="42" y="58"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#F5A623" opacity="0.8">intent</text>
+
+      <!-- "?" at thread end -->
+      <text x="600" y="60"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="18" font-weight="300"
+            text-anchor="middle"
+            fill="#F5A623" opacity="0.18">?</text>
+
+      <!-- Ground line -->
+      <line x1="40" y1="210" x2="640" y2="210"
+            stroke="#3D3D45" stroke-width="1" />
+
+      <!-- ════════════════════════════
+           STAGE 1: FIREWORK
+           ════════════════════════════ -->
+      <g transform="translate(48, 80)">
+        <!-- Stick -->
+        <line x1="40" y1="125" x2="40" y2="68"
+              stroke="#9A9896" stroke-width="1.5"
+              stroke-linecap="round" opacity="0.6" />
+        <!-- Firework burst — starburst lines -->
+        <g opacity="0.75">
+          <line x1="40" y1="60" x2="40" y2="32" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+          <line x1="40" y1="60" x2="60" y2="40" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+          <line x1="40" y1="60" x2="64" y2="60" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+          <line x1="40" y1="60" x2="60" y2="80" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+          <line x1="40" y1="60" x2="16" y2="80" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+          <line x1="40" y1="60" x2="16" y2="60" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+          <line x1="40" y1="60" x2="20" y2="40" stroke="#9A9896" stroke-width="1.2" stroke-linecap="round" />
+        </g>
+        <!-- Spark dots -->
+        <circle cx="40" cy="28" r="2.5" fill="#9A9896" opacity="0.5" />
+        <circle cx="66" cy="58" r="2" fill="#9A9896" opacity="0.4" />
+        <circle cx="62" cy="38" r="1.5" fill="#9A9896" opacity="0.35" />
+        <circle cx="16" cy="82" r="1.8" fill="#9A9896" opacity="0.3" />
+        <!-- Intention marker: bright dot on thread -->
+        <circle cx="40" cy="-26" r="4" fill="#F5A623" opacity="0.75" />
+        <line x1="40" y1="-22" x2="40" y2="-4"
+              stroke="#F5A623" stroke-width="0.8" opacity="0.5" />
+      </g>
+
+      <!-- Stage 1 label -->
+      <text x="88" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#9A9896" opacity="0.7">FIREWORK</text>
+      <text x="88" y="242"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.4">celebration</text>
+
+      <!-- ── TRANSFORMATION ARROW 1 ─── -->
+      <g opacity="0.3">
+        <line x1="178" y1="145" x2="238" y2="145"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 3"
+              marker-end="url(#arr-t)" />
+        <text x="208" y="134"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="500"
+              letter-spacing="0.1em" text-anchor="middle"
+              fill="#9A9896">EVOLVES</text>
+      </g>
+
+      <defs>
+        <marker id="arr-t" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#9A9896"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </marker>
+      </defs>
+
+      <!-- ════════════════════════════
+           STAGE 2: CANNON
+           ════════════════════════════ -->
+      <g transform="translate(238, 100)">
+        <!-- Cannon barrel -->
+        <rect x="0" y="20" width="110" height="32" rx="8"
+              fill="none" stroke="#9A9896" stroke-width="1.5" opacity="0.7" />
+        <!-- Barrel opening -->
+        <ellipse cx="110" cy="36" rx="6" ry="14"
+                 fill="none" stroke="#9A9896" stroke-width="1.2" opacity="0.5" />
+        <!-- Muzzle flash — small -->
+        <line x1="116" y1="36" x2="128" y2="24" stroke="#9A9896" stroke-width="1" stroke-linecap="round" opacity="0.3" />
+        <line x1="116" y1="36" x2="130" y2="36" stroke="#9A9896" stroke-width="1" stroke-linecap="round" opacity="0.3" />
+        <line x1="116" y1="36" x2="128" y2="48" stroke="#9A9896" stroke-width="1" stroke-linecap="round" opacity="0.3" />
+        <!-- Carriage wheels -->
+        <circle cx="24" cy="58" r="14" fill="none" stroke="#9A9896" stroke-width="1.2" opacity="0.5" />
+        <circle cx="24" cy="58" r="5"  fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.3" />
+        <circle cx="86" cy="58" r="14" fill="none" stroke="#9A9896" stroke-width="1.2" opacity="0.5" />
+        <circle cx="86" cy="58" r="5"  fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.3" />
+        <!-- Intention marker: dimmer -->
+        <circle cx="42" cy="-46" r="4" fill="#F5A623" opacity="0.38" />
+        <line x1="42" y1="-42" x2="42" y2="-24"
+              stroke="#F5A623" stroke-width="0.8" opacity="0.25" />
+      </g>
+
+      <!-- Stage 2 label -->
+      <text x="338" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#9A9896" opacity="0.7">CANNON</text>
+      <text x="338" y="242"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.4">warfare</text>
+
+      <!-- ── TRANSFORMATION ARROW 2 ─── -->
+      <g opacity="0.25">
+        <line x1="408" y1="145" x2="460" y2="145"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 3"
+              marker-end="url(#arr-t)" />
+        <text x="434" y="134"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="500"
+              letter-spacing="0.1em" text-anchor="middle"
+              fill="#9A9896">SHRINKS</text>
+      </g>
+
+      <!-- ════════════════════════════
+           STAGE 3: HANDGUN
+           ════════════════════════════ -->
+      <g transform="translate(460, 104)">
+        <!-- Grip -->
+        <rect x="14" y="42" width="28" height="48" rx="4"
+              fill="none" stroke="#9A9896" stroke-width="1.4" opacity="0.6" />
+        <!-- Trigger guard -->
+        <path d="M14 62 Q8 72 14 82"
+              fill="none" stroke="#9A9896" stroke-width="1.2"
+              stroke-linecap="round" opacity="0.5" />
+        <!-- Trigger -->
+        <line x1="11" y1="68" x2="14" y2="74"
+              stroke="#9A9896" stroke-width="1.2"
+              stroke-linecap="round" opacity="0.4" />
+        <!-- Slide / barrel top -->
+        <rect x="14" y="14" width="76" height="28" rx="5"
+              fill="none" stroke="#9A9896" stroke-width="1.4" opacity="0.6" />
+        <!-- Barrel extension -->
+        <line x1="90" y1="28" x2="106" y2="28"
+              stroke="#9A9896" stroke-width="4"
+              stroke-linecap="round" opacity="0.5" />
+        <!-- Intention marker: nearly gone -->
+        <circle cx="50" cy="-50" r="4" fill="#F5A623" opacity="0.14" />
+        <line x1="50" y1="-46" x2="50" y2="-28"
+              stroke="#F5A623" stroke-width="0.8" opacity="0.1"
+              stroke-dasharray="2 3" />
+      </g>
+
+      <!-- Stage 3 label -->
+      <text x="530" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.14em" text-anchor="middle"
+            fill="#9A9896" opacity="0.7">HANDGUN</text>
+      <text x="530" y="242"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.4">personal use</text>
+
+    </svg>
   </div>
+
+  <!-- ── BODY CONTENT ────────────────────────────────────── -->
+  <main class="exploration-body">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        An idea emerges. Gunpowder. Its early use is simple: celebration, fireworks, signalling. A moment of human expression — intention visible in the object itself.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Then the idea evolves. The same material becomes a cannon, a weapon, a tool for warfare. The capability expands. The intention shifts. At each step, something changes — not just the tool, but the meaning attached to it.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Over time, the tool becomes smaller. More accessible. More personal. A handgun. The original intention — celebration, expression — is nowhere in the object.
+      </p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"The problem is not that tools evolve. It is that meaning does not travel with them."</p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        The original reasoning does not travel. The intentions behind each transformation are not carried forward in a structured way. So when harm occurs, the question becomes: who is responsible? The inventor of the material? The designer of the weapon? The manufacturer? The user?
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        Without continuity of reasoning, responsibility fragments. It becomes debated, reassigned, and simplified. We attach warnings. We create laws. We attempt to regulate outcomes. But these are responses after the fact.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Most governance appears after the event. We regulate outcomes. We assign responsibility. We attempt to contain harm. But by then, the chain is already broken — the original intentions, decisions, and transformations are no longer visible as a continuous structure.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        This is not just a problem of tools. It is a problem of timing. And it is not historical — it is the present condition of AI systems, governance frameworks, institutional procedures, and inherited decisions everywhere.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <div class="beat-text">
+        <p>What is missing is governance that exists <strong>before</strong> the event. Not as restriction — but as structure. A system where:</p>
+        <ul>
+          <li>intention is visible at the point of creation</li>
+          <li>reasoning can be followed across transformations</li>
+          <li>known risks are carried forward with the tool</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        Then governance is no longer something applied only after failure. It becomes part of how systems evolve — a continuous thread of reasoning that travels with what we create, not a judgement delivered afterward.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        We are very good at creating. We are much less capable of carrying forward <strong>why we created in the first place</strong>. That is the gap this space is exploring how to close.
+      </p>
+    </div>
+
+    <!-- ── OPEN DOOR ──────────────────────────────────────── -->
+    <div class="open-door">
+      <p>This raises a question for you?
+        <a href="mailto:questions@cognitivesuperhighway.org">Send it.</a>
+        Selected questions shape future explorations.</p>
+    </div>
+
+    <!-- ── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="exploration-nav">
+      <a href="ashtray-problem.html">← The Ashtray Problem</a>
+      <a href="index.html" class="all-explorations">All Explorations</a>
+      <a href="the-skill-of-intention.html">The Skill of Intention →</a>
+    </nav>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
 
 </body>
 </html>

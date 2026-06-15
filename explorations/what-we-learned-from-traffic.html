@@ -2,108 +2,453 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>What We Learned from Traffic — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>What We Learned from Traffic — The Cognitive Super Highway</title>
+  <meta name="description" content="We did not solve traffic by improving vehicles. We solved it by structuring interaction." />
+  <meta property="og:title" content="What We Learned from Traffic — The Cognitive Super Highway" />
+  <meta property="og:description" content="We did not solve traffic by improving vehicles. We solved it by structuring interaction." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/what-we-learned-from-traffic.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    .exploration-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+    }
+
+    .exploration-breadcrumb {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .exploration-breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exploration-breadcrumb a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-breadcrumb span { color: var(--lane); margin: 0 0.5rem; }
+
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+
+    .exploration-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-visual {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+
+    .hero-visual svg { width: 100%; display: block; }
+
+    .exploration-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+
+    .exploration-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--signal);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+    }
+
+    .exploration-body p.muted { color: rgba(240,238,233,0.6); }
+    .exploration-body strong { font-weight: 500; }
+
+    .pull-quote {
+      border-left: 2px solid var(--dawn);
+      margin: 2.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.8rem;
+    }
+
+    .pull-quote p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      font-style: italic;
+      color: var(--signal) !important;
+      line-height: 1.6 !important;
+    }
+
+    .open-door {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--lane);
+      border-left: 2px solid var(--dawn);
+    }
+
+    .open-door p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem !important;
+      font-weight: 400;
+      color: rgba(240,238,233,0.55) !important;
+      margin: 0 !important;
+    }
+
+    .open-door a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .open-door a:hover { border-color: var(--dawn); }
+
+    .exploration-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--lane);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-nav .all-explorations { color: var(--dawn); border-color: rgba(245,166,35,0.4); }
+
+    @media (max-width: 600px) {
+      .exploration-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
 <body>
 
-<div class="hero">
-  <h1>What We Learned from Traffic</h1>
+  <!-- ── HEADER ──────────────────────────────────────────── -->
+  <header class="exploration-header">
+    <p class="exploration-breadcrumb">
+      <a href="../index.html">The Cognitive Super Highway</a>
+      <span>/</span>
+      <a href="index.html">Explorations</a>
+      <span>/</span> What We Learned from Traffic
+    </p>
 
-  <p class="hero-lead">
-    We did not solve traffic by improving vehicles.
-  </p>
+    <h1 class="exploration-title">
+      We did not solve traffic<br>by improving vehicles.
+    </h1>
+    <p class="exploration-subtitle">
+      On how the emergence of traffic required not better drivers,
+      but infrastructure for interaction — and what that means for thinking systems today.
+    </p>
+  </header>
 
-  <p class="hero-lead">
-    We solved it by structuring interaction.
-  </p>
-</div>
+  <!-- ── HERO VISUAL ─────────────────────────────────────── -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>A road sign and its ghost beside it</title>
+      <desc>Two yield signs side by side: one solid and present, one luminous and fading. The word "intention" floats in the haze of the second.</desc>
 
-<div class="section consider">
-  <div class="section-title">Consider</div>
-  <p>
-    When vehicles first appeared, movement scaled faster than coordination.
-  </p>
-</div>
+      <!-- Shared ground line -->
+      <line x1="100" y1="210" x2="580" y2="210"
+            stroke="#3D3D45" stroke-width="1" />
 
-<div class="section dead-end">
-  <div class="section-title">Dead End</div>
-  <p>
-    Without shared structure:
-  </p>
-  <p>
-    collisions increased<br>
-    confusion spread<br>
-    responsibility blurred
-  </p>
-</div>
+      <!-- === SOLID SIGN (left) === -->
+      <g transform="translate(155, 30)">
+        <!-- Post -->
+        <rect x="33" y="148" width="6" height="58" rx="2"
+              fill="#9A9896" opacity="0.5" />
+        <!-- Yield triangle (pointing down) -->
+        <polygon points="36,0 72,124 0,124"
+                 fill="none"
+                 stroke="#9A9896"
+                 stroke-width="2"
+                 stroke-linejoin="round" />
+        <!-- Inner triangle -->
+        <polygon points="36,16 64,112 8,112"
+                 fill="none"
+                 stroke="#9A9896"
+                 stroke-width="1"
+                 opacity="0.4" />
+        <!-- YIELD text -->
+        <text x="36" y="80"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="13"
+              font-weight="700"
+              letter-spacing="0.1em"
+              text-anchor="middle"
+              fill="#9A9896"
+              opacity="0.8">YIELD</text>
+      </g>
 
-<div class="section consider">
-  <div class="section-title">Consider</div>
-  <p>
-    The solution was not better drivers alone.
-  </p>
-</div>
+      <!-- "The signal" label -->
+      <text x="191" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10"
+            font-weight="600"
+            letter-spacing="0.18em"
+            text-anchor="middle"
+            fill="#9A9896"
+            opacity="0.7">THE SIGNAL</text>
 
-<div class="section consider">
-  <div class="section-title">Consider</div>
-  <p>
-    It was:
-  </p>
-  <p>
-    lanes<br>
-    signals<br>
-    rules<br>
-    shared expectations
-  </p>
-</div>
+      <!-- Arrow between: "removed / ignored" -->
+      <g opacity="0.3">
+        <line x1="295" y1="115" x2="365" y2="115"
+              stroke="#9A9896" stroke-width="0.8"
+              stroke-dasharray="3 3"
+              marker-end="url(#arr-m)" />
+        <text x="330" y="106"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9"
+              font-weight="500"
+              letter-spacing="0.14em"
+              text-anchor="middle"
+              fill="#9A9896">IGNORED</text>
+      </g>
 
-<div class="section direction">
-  <div class="section-title">Direction</div>
-  <p>
-    Infrastructure made interaction predictable.
-  </p>
-</div>
+      <defs>
+        <marker id="arr-m" viewBox="0 0 10 10" refX="8" refY="5"
+                markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M2 1L8 5L2 9"
+                fill="none" stroke="#9A9896"
+                stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </marker>
+      </defs>
 
-<div class="section consider">
-  <div class="section-title">Consider</div>
-  <p>
-    Today, thinking systems are scaling in a similar way.
-  </p>
-</div>
+      <!-- === GHOST SIGN (right) — intention that dissolves === -->
+      <g transform="translate(355, 30)">
+        <!-- Outer glow -->
+        <ellipse cx="36" cy="82" rx="54" ry="72"
+                 fill="#F5A623" opacity="0.04" />
+        <ellipse cx="36" cy="82" rx="38" ry="54"
+                 fill="#F5A623" opacity="0.05" />
 
-<div class="section dead-end">
-  <div class="section-title">Dead End</div>
-  <p>
-    But we lack:
-  </p>
-  <p>
-    shared structure<br>
-    continuity of reasoning<br>
-    visible intention
-  </p>
-</div>
+        <!-- Ghost post -->
+        <rect x="33" y="148" width="6" height="58" rx="2"
+              fill="#F5A623" opacity="0.12" />
 
-<div class="section conclusion">
-  <div class="section-title">Conclusion</div>
-  <p>
-    We may not need better systems alone.
-  </p>
-  <p>
-    We may need infrastructure for how reasoning moves.
-  </p>
-</div>
+        <!-- Ghost triangle outer -->
+        <polygon points="36,0 72,124 0,124"
+                 fill="none"
+                 stroke="#F5A623"
+                 stroke-width="1.2"
+                 stroke-linejoin="round"
+                 opacity="0.2"
+                 stroke-dasharray="5 4" />
+        <!-- Ghost triangle inner -->
+        <polygon points="36,16 64,112 8,112"
+                 fill="none"
+                 stroke="#F5A623"
+                 stroke-width="0.8"
+                 opacity="0.12"
+                 stroke-dasharray="3 4" />
 
-<hr>
+        <!-- Internal glow fill -->
+        <polygon points="36,16 64,112 8,112"
+                 fill="#F5A623" opacity="0.05" />
 
-<div class="footnote">
-  <p>
-    Continue exploring:
-    <a href="index.html">Explorations</a>
-  </p>
-</div>
+        <!-- "intention" text floating inside -->
+        <text x="36" y="80"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="11"
+              font-weight="300"
+              letter-spacing="0.14em"
+              text-anchor="middle"
+              fill="#F5A623"
+              opacity="0.55">intention</text>
+
+        <!-- Diffusion particles -->
+        <circle cx="22" cy="34"  r="1.2" fill="#F5A623" opacity="0.22" />
+        <circle cx="48" cy="20"  r="0.9" fill="#F5A623" opacity="0.16" />
+        <circle cx="34" cy="8"   r="0.7" fill="#F5A623" opacity="0.11" />
+        <circle cx="58" cy="14"  r="0.5" fill="#F5A623" opacity="0.08" />
+        <circle cx="14" cy="18"  r="0.6" fill="#F5A623" opacity="0.08" />
+      </g>
+
+      <!-- "What dissolves" label -->
+      <text x="391" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10"
+            font-weight="600"
+            letter-spacing="0.18em"
+            text-anchor="middle"
+            fill="#F5A623"
+            opacity="0.55">WHAT DISSOLVES</text>
+
+    </svg>
+  </div>
+
+  <!-- ── BODY CONTENT ────────────────────────────────────── -->
+  <main class="exploration-body">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        When vehicles first appeared, movement scaled faster than coordination. Roads filled before anyone had agreed on how to share them.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <div class="beat-text muted">
+        <p>Without shared structure:</p>
+        <ul>
+          <li>collisions increased</li>
+          <li>confusion spread</li>
+          <li>responsibility blurred</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        The solution was not better drivers alone.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <div class="beat-text">
+        <p>It was:</p>
+        <ul>
+          <li>lanes</li>
+          <li>signals</li>
+          <li>rules</li>
+          <li>shared expectations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Infrastructure made interaction predictable. Not by constraining movement — by making intention visible."</p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Today, thinking systems are scaling in a similar way. AI systems, organisations, governance structures — all are coordinating at increasing speed and scale.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <div class="beat-text muted">
+        <p>But we lack:</p>
+        <ul>
+          <li>shared structure for reasoning</li>
+          <li>continuity across interactions</li>
+          <li>visible intention</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        What if reasoning had lanes? If intention was visible at the point of interaction? If decisions carried their justification forward — the way a road sign carries its meaning to every driver who passes it?
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        We may not need better systems alone. We may need <strong>infrastructure for how reasoning moves</strong> — the same way traffic needed infrastructure for how vehicles move.
+      </p>
+    </div>
+
+    <!-- ── OPEN DOOR ──────────────────────────────────────── -->
+    <div class="open-door">
+      <p>This raises a question for you?
+        <a href="mailto:questions@cognitivesuperhighway.org">Send it.</a>
+        Selected questions shape future explorations.</p>
+    </div>
+
+    <!-- ── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="exploration-nav">
+      <a href="start-here.html">← Start Here</a>
+      <a href="index.html" class="all-explorations">All Explorations</a>
+      <a href="free-speech-and-lane-markings.html">Free Speech and Lane Markings →</a>
+    </nav>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
 
 </body>
 </html>

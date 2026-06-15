@@ -2,221 +2,531 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Attribution, Value, and the End of Secrecy — The Cognitive Super Highway</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style.css">
-</head>
+  <title>Attribution, Value, and the End of Secrecy — The Cognitive Super Highway</title>
+  <meta name="description" content="We track everything valuable except reasoning. On why secrecy is what happens when attribution fails." />
+  <meta property="og:title" content="Attribution, Value, and the End of Secrecy — The Cognitive Super Highway" />
+  <meta property="og:description" content="We track everything valuable except reasoning. On why secrecy is what happens when attribution fails." />
+  <meta property="og:image" content="/assets/pkos-vehicle.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cognitivesuperhighway.org/explorations/attribution-and-value.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/pkos-vehicle.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
 
+  <style>
+    .exploration-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 0;
+    }
+    .exploration-breadcrumb {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .exploration-breadcrumb a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-breadcrumb a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-breadcrumb span { color: var(--lane); margin: 0 0.5rem; }
+    .exploration-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1rem;
+    }
+    .exploration-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.55);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+    .hero-visual {
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      padding: 0 2rem;
+    }
+    .hero-visual svg { width: 100%; display: block; }
+    .exploration-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+    .exploration-body p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--signal);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+    }
+    .exploration-body p.muted { color: rgba(240,238,233,0.6); }
+    .exploration-body strong { font-weight: 500; }
+    .pull-quote {
+      border-left: 2px solid var(--dawn);
+      margin: 2.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.8rem;
+    }
+    .pull-quote p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem !important;
+      font-weight: 300 !important;
+      font-style: italic;
+      color: var(--signal) !important;
+      line-height: 1.6 !important;
+    }
+    .open-door {
+      margin: 3rem 0 1rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid var(--lane);
+      border-left: 2px solid var(--dawn);
+    }
+    .open-door p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem !important;
+      font-weight: 400;
+      color: rgba(240,238,233,0.55) !important;
+      margin: 0 !important;
+    }
+    .open-door a {
+      color: var(--dawn);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      transition: border-color 0.2s;
+    }
+    .open-door a:hover { border-color: var(--dawn); }
+    .exploration-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--lane);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+    .exploration-nav .all-explorations { color: var(--dawn); border-color: rgba(245,166,35,0.4); }
+    @media (max-width: 600px) {
+      .exploration-nav { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
 <body>
 
-  <div class="hero">
-    <h1>Attribution, Value, and the End of Secrecy</h1>
-
-    <p class="hero-lead">
-      What if ideas did not need to be protected to be recognized?
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      We track almost everything we consider valuable.
-    </p>
-    <p>
-      Products carry barcodes.
-      Assets carry ownership records.
-      Transactions are logged and auditable.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Value moves—and we follow it.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      But something equally important remains difficult to track:
-    </p>
-    <p>
-      reasoning<br>
-      intention<br>
-      responsibility
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      These are the very things that shape decisions and outcomes.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      We have tried to treat them as valuable.
-    </p>
-    <p>
-      Patents.
-      Scientific publishing.
-      Authorship.
-      Prior art.
-    </p>
-  </div>
-
-  <div class="section dead-end">
-    <div class="section-title">Dead End</div>
-    <p>
-      But none of these systems truly scaled.
-    </p>
-    <p>
-      They are slow, fragmented, domain-specific, and difficult to connect.
-    </p>
-    <p>
-      They capture moments—
-      but do not carry reasoning forward in use.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      So a different behavior emerged:
-    </p>
-    <p>
-      secrecy.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Not because ideas were meant to be hidden—
-    </p>
-    <p>
-      but because attribution could not be relied upon.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      When attribution is uncertain,
-      reasoning becomes something to protect.
-    </p>
-    <p>
-      Not something to build on.
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      What if attribution was native?
-    </p>
-    <p>
-      What if ideas carried their origin
-      from the moment they were expressed—
-      persistently, across contexts and time?
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      Then value would not need to be protected to be preserved.
-    </p>
-    <p>
-      It could be discovered,
-      built upon,
-      and extended—
-      without losing origin.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      Some of the best investors recognize ideas
-      as they begin to prove valuable.
-    </p>
-  </div>
-
-  <div class="section consider">
-    <div class="section-title">Consider</div>
-    <p>
-      But this still depends on:
-    </p>
-    <p>
-      access<br>
-      timing<br>
-      interpretation
-    </p>
-  </div>
-
-  <div class="section imagine">
-    <div class="section-title">Imagine</div>
-    <p>
-      What if recognition did not depend on access—
-    </p>
-    <p>
-      but on visibility of reasoning?
-    </p>
-  </div>
-
-  <div class="section direction">
-    <div class="section-title">Direction</div>
-    <p>
-      This would not eliminate competition.
-    </p>
-    <p>
-      But it would change its nature.
-    </p>
-    <p>
-      From control of ideas—
-      to contribution to them.
-    </p>
-  </div>
-
-  <div class="section conclusion">
-    <div class="section-title">Conclusion</div>
-    <p>
-      Reasoning may be the most valuable thing we produce.
-    </p>
-    <p>
-      But without infrastructure,
-      it became something we protect—
-      instead of something we can carry forward.
-    </p>
-  </div>
-
-  <div class="section conclusion">
-    <div class="section-title">Conclusion</div>
-    <p>
-      What if value was not just what we produce—
-    </p>
-    <p>
-      but what we can continue?
-    </p>
-  </div>
-
-  <hr>
-
-  <div class="footnote">
-    <p>
-      Continue exploring:
-      <a href="index.html">Explorations</a>
-    </p>
-
-    <p>
-      Return:
+  <header class="exploration-header">
+    <p class="exploration-breadcrumb">
       <a href="../index.html">The Cognitive Super Highway</a>
+      <span>/</span>
+      <a href="index.html">Explorations</a>
+      <span>/</span> Attribution, Value, and the End of Secrecy
     </p>
+    <h1 class="exploration-title">
+      We track everything valuable.<br>Except reasoning.
+    </h1>
+    <p class="exploration-subtitle">
+      On how reasoning became something we protect instead of something
+      we build on — and what changes if attribution becomes part of the infrastructure.
+    </p>
+  </header>
+
+  <!-- ── HERO VISUAL ─────────────────────────────────────── -->
+  <div class="hero-visual">
+    <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" role="img">
+      <title>Two ledger books side by side: one tracking products with clear entries, one tracking reasoning with empty unattributed lines</title>
+      <desc>Left ledger: product entries with barcodes, ownership marks, clear attribution. Right ledger: reasoning entries present but untracked — no origin, no continuity. The contrast is recorded versus unrecorded in the same world.</desc>
+
+      <!-- Ground line -->
+      <line x1="40" y1="210" x2="640" y2="210"
+            stroke="#3D3D45" stroke-width="1" />
+
+      <!-- ════════════════════════════
+           LEFT: PRODUCT LEDGER — tracked, attributed
+           ════════════════════════════ -->
+      <g transform="translate(52, 30)">
+        <!-- Book cover -->
+        <rect x="0" y="0" width="190" height="168" rx="4"
+              fill="none" stroke="#9A9896" stroke-width="1.5" opacity="0.65" />
+        <!-- Spine -->
+        <rect x="0" y="0" width="14" height="168" rx="4"
+              fill="#3D3D45" opacity="0.6" />
+        <!-- Page area -->
+        <rect x="18" y="10" width="164" height="148" rx="2"
+              fill="#2B2B33" opacity="0.5" />
+
+        <!-- Header row -->
+        <line x1="18" y1="30" x2="182" y2="30"
+              stroke="#9A9896" stroke-width="0.8" opacity="0.4" />
+        <text x="30" y="24"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" font-weight="600"
+              letter-spacing="0.14em"
+              fill="#9A9896" opacity="0.55">ITEM</text>
+        <text x="108" y="24"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" font-weight="600"
+              letter-spacing="0.14em"
+              fill="#9A9896" opacity="0.55">OWNER</text>
+        <text x="156" y="24"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" font-weight="600"
+              letter-spacing="0.14em"
+              fill="#9A9896" opacity="0.55">REF</text>
+
+        <!-- Entry rows — solid, attributed -->
+        <!-- Row 1 -->
+        <text x="30" y="48"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Product A</text>
+        <text x="108" y="48"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Co. Ltd</text>
+        <rect x="156" y="38" width="22" height="12" rx="1"
+              fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.45" />
+        <line x1="159" y1="40" x2="159" y2="48" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <line x1="162" y1="40" x2="162" y2="48" stroke="#9A9896" stroke-width="0.5" opacity="0.4" />
+        <line x1="165" y1="40" x2="165" y2="48" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <line x1="167" y1="40" x2="167" y2="48" stroke="#9A9896" stroke-width="0.5" opacity="0.35" />
+        <line x1="170" y1="40" x2="170" y2="48" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+        <line x1="173" y1="40" x2="173" y2="48" stroke="#9A9896" stroke-width="0.5" opacity="0.4" />
+        <line x1="175" y1="40" x2="175" y2="48" stroke="#9A9896" stroke-width="1" opacity="0.5" />
+
+        <!-- Row 2 -->
+        <line x1="18" y1="56" x2="182" y2="56" stroke="#3D3D45" stroke-width="0.5" opacity="0.5" />
+        <text x="30" y="70"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Asset #247</text>
+        <text x="108" y="70"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Verified</text>
+        <circle cx="168" cy="65" r="5"
+                fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.4" />
+        <text x="168" y="68"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="600"
+              text-anchor="middle"
+              fill="#9A9896" opacity="0.5">✓</text>
+
+        <!-- Row 3 -->
+        <line x1="18" y1="78" x2="182" y2="78" stroke="#3D3D45" stroke-width="0.5" opacity="0.5" />
+        <text x="30" y="92"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Transaction</text>
+        <text x="108" y="92"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Logged</text>
+        <rect x="156" y="84" width="22" height="8" rx="1"
+              fill="#3D3D45" opacity="0.7" />
+
+        <!-- Row 4 -->
+        <line x1="18" y1="100" x2="182" y2="100" stroke="#3D3D45" stroke-width="0.5" opacity="0.5" />
+        <text x="30" y="114"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">IP Filing</text>
+        <text x="108" y="114"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#9A9896" opacity="0.7">Registered</text>
+        <circle cx="168" cy="109" r="5"
+                fill="none" stroke="#9A9896" stroke-width="0.8" opacity="0.4" />
+        <text x="168" y="112"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="7" font-weight="600"
+              text-anchor="middle"
+              fill="#9A9896" opacity="0.5">✓</text>
+
+        <!-- Continues indicator -->
+        <text x="100" y="148"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="9" font-weight="300"
+              letter-spacing="0.08em"
+              text-anchor="middle"
+              fill="#9A9896" opacity="0.35">· · ·</text>
+      </g>
+
+      <!-- Left label -->
+      <text x="147" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.16em" text-anchor="middle"
+            fill="#9A9896" opacity="0.65">PRODUCTS</text>
+      <text x="147" y="242"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#9A9896" opacity="0.4">tracked, attributed</text>
+
+      <!-- ── VS MARKER ─────────────────────────────────────── -->
+      <text x="340" y="120"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="11" font-weight="300"
+            text-anchor="middle"
+            fill="#3D3D45" opacity="0.8">vs</text>
+
+      <!-- ════════════════════════════
+           RIGHT: REASONING LEDGER — present but untracked
+           ════════════════════════════ -->
+      <g transform="translate(438, 30)">
+        <!-- Book cover — same shape, amber tint -->
+        <rect x="0" y="0" width="190" height="168" rx="4"
+              fill="none" stroke="#F5A623" stroke-width="1"
+              opacity="0.2" stroke-dasharray="4 3" />
+        <!-- Spine — faint -->
+        <rect x="0" y="0" width="14" height="168" rx="4"
+              fill="#F5A623" opacity="0.06" />
+        <!-- Page area -->
+        <rect x="18" y="10" width="164" height="148" rx="2"
+              fill="#2B2B33" opacity="0.4" />
+
+        <!-- Header row -->
+        <line x1="18" y1="30" x2="182" y2="30"
+              stroke="#F5A623" stroke-width="0.8" opacity="0.2" />
+        <text x="30" y="24"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" font-weight="600"
+              letter-spacing="0.14em"
+              fill="#F5A623" opacity="0.35">REASONING</text>
+        <text x="130" y="24"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" font-weight="600"
+              letter-spacing="0.14em"
+              fill="#F5A623" opacity="0.25">ORIGIN</text>
+
+        <!-- Entry rows — present but unattributed -->
+        <!-- Row 1: text present, origin blank -->
+        <text x="30" y="48"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#F5A623" opacity="0.45">"We should...</text>
+        <line x1="130" y1="46" x2="178" y2="46"
+              stroke="#F5A623" stroke-width="0.5"
+              stroke-dasharray="2 2" opacity="0.2" />
+        <text x="154" y="48"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8"
+              text-anchor="middle"
+              fill="#F5A623" opacity="0.2">—</text>
+
+        <!-- Row 2 -->
+        <line x1="18" y1="56" x2="182" y2="56" stroke="#F5A623" stroke-width="0.3" opacity="0.15" />
+        <text x="30" y="70"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#F5A623" opacity="0.4">Decision: X</text>
+        <text x="154" y="70"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8"
+              text-anchor="middle"
+              fill="#F5A623" opacity="0.18">unknown</text>
+
+        <!-- Row 3 -->
+        <line x1="18" y1="78" x2="182" y2="78" stroke="#F5A623" stroke-width="0.3" opacity="0.15" />
+        <text x="30" y="92"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#F5A623" opacity="0.35">Interpretation</text>
+        <text x="154" y="92"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8"
+              text-anchor="middle"
+              fill="#F5A623" opacity="0.15">—</text>
+
+        <!-- Row 4 -->
+        <line x1="18" y1="100" x2="182" y2="100" stroke="#F5A623" stroke-width="0.3" opacity="0.15" />
+        <text x="30" y="114"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" fill="#F5A623" opacity="0.3">Assumption</text>
+        <text x="154" y="114"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8"
+              text-anchor="middle"
+              fill="#F5A623" opacity="0.12">—</text>
+
+        <!-- Diffusion particles — reasoning escaping untracked -->
+        <circle cx="160" cy="50" r="1.5" fill="#F5A623" opacity="0.2" />
+        <circle cx="172" cy="34" r="1"   fill="#F5A623" opacity="0.14" />
+        <circle cx="178" cy="20" r="0.8" fill="#F5A623" opacity="0.1" />
+        <circle cx="165" cy="14" r="0.6" fill="#F5A623" opacity="0.08" />
+
+        <!-- "protected instead" label -->
+        <text x="95" y="140"
+              font-family="'Space Grotesk', sans-serif"
+              font-size="8" font-weight="300"
+              letter-spacing="0.1em"
+              text-anchor="middle"
+              fill="#F5A623" opacity="0.3">protected, not tracked</text>
+      </g>
+
+      <!-- Right label -->
+      <text x="533" y="228"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="10" font-weight="600"
+            letter-spacing="0.16em" text-anchor="middle"
+            fill="#F5A623" opacity="0.6">REASONING</text>
+      <text x="533" y="242"
+            font-family="'Space Grotesk', sans-serif"
+            font-size="9" font-weight="400"
+            letter-spacing="0.1em" text-anchor="middle"
+            fill="#F5A623" opacity="0.4">present, unrecorded</text>
+
+    </svg>
   </div>
+
+  <!-- ── BODY CONTENT ────────────────────────────────────── -->
+  <main class="exploration-body">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        We track almost everything we consider valuable. Products carry barcodes. Assets carry ownership records. Transactions are logged and auditable. Value moves — and we follow it.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <div class="beat-text">
+        <p>But something equally important remains difficult to track:</p>
+        <ul>
+          <li>reasoning</li>
+          <li>intention</li>
+          <li>responsibility</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <div class="beat-text">
+        <p>We have tried to treat ideas as valuable. Patents. Scientific publishing. Authorship. Prior art.</p>
+      </div>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        But none of these systems truly scaled. They are slow, fragmented, domain-specific, and difficult to connect. They capture moments — but do not carry reasoning forward in use.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        So a different behaviour emerged: secrecy. Not because ideas were meant to be hidden — but because attribution could not be relied upon. When attribution is uncertain, reasoning becomes something to protect. Not something to build on.
+      </p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Secrecy is not the goal. It is what happens when attribution fails."</p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        What if attribution was native? What if ideas carried their origin from the moment they were expressed — persistently, across contexts and time? Then value would not need to be protected to be preserved. It could be discovered, built upon, and extended — without losing origin.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        This would not eliminate competition. But it would change its nature — from control of ideas to <strong>contribution to them</strong>. The person who builds on your reasoning visibly, with attribution intact, creates more value than the person who hides it.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <p class="beat-text">
+        Reasoning may be the most valuable thing we produce. But without infrastructure to track it, we defaulted to protecting it instead of building on it. <strong>The infrastructure problem created the secrecy problem.</strong> Solve the first and the second becomes unnecessary.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        What if value was not just what we produce — but what we can continue? That question is being explored seriously. The work is deeper than this page can carry. But it starts here.
+      </p>
+    </div>
+
+    <!-- ── OPEN DOOR ──────────────────────────────────────── -->
+    <div class="open-door">
+      <p>This raises a question for you?
+        <a href="mailto:questions@cognitivesuperhighway.org">Send it.</a>
+        Selected questions shape future explorations.</p>
+    </div>
+
+    <!-- ── NAVIGATION ─────────────────────────────────────── -->
+    <nav class="exploration-nav">
+      <a href="the-skill-of-intention.html">← The Skill of Intention</a>
+      <a href="index.html" class="all-explorations">All Explorations</a>
+      <a href="control-vs-alignment.html">Control vs Alignment →</a>
+    </nav>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
 
 </body>
 </html>
