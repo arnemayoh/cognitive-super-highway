@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Smoke Principle — The Cognitive Super Highway</title>
+  <meta name="description" content="Understanding is what makes things work. We only notice it when it leaves." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── SVG HERO ── */
+    .exploration-hero {
+      padding: 5rem 2rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .exploration-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 1rem;
+    }
+    .exploration-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1.5rem;
+    }
+    .exploration-hero .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.6);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+    .svg-moment {
+      margin: 0 auto 3rem;
+      max-width: 480px;
+    }
+    /* ── TAGLINE BLOCK ── */
+    .tagline-block {
+      max-width: 720px;
+      margin: 4rem auto 1rem;
+      padding: 2rem 2rem 0;
+      border-top: 1px solid var(--lane);
+    }
+    .tagline-block p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.5);
+      line-height: 2;
+      font-style: italic;
+    }
+    /* ── NAV ── */
+    .exploration-nav {
+      max-width: 720px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+  </style>
+</head>
+<body>
+
+  <div class="exploration-hero">
+    <p class="exploration-eyebrow">Why This Matters — I of III</p>
+    <h1>The Smoke Principle</h1>
+    <p class="hero-sub">
+      Understanding is what makes things work.<br>
+      We only notice it when it leaves.
+    </p>
+
+    <!-- SVG: Room with smoke rising, then empty -->
+    <div class="svg-moment">
+      <svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <!-- Room left: smoke present, machine working -->
+        <rect x="20" y="80" width="180" height="100" rx="2" fill="#2B2B33" stroke="#3D3D45" stroke-width="1"/>
+        <!-- Machine -->
+        <rect x="50" y="110" width="120" height="50" rx="2" fill="#1A1A1F" stroke="#3D3D45" stroke-width="1"/>
+        <rect x="70" y="125" width="30" height="20" rx="1" fill="#1A4D2E" opacity="0.8"/>
+        <circle cx="140" cy="135" r="8" fill="#1A4D2E" opacity="0.8"/>
+        <!-- Smoke rising (present) -->
+        <path d="M90 110 Q88 95 92 82 Q96 70 90 58" stroke="#F5A623" stroke-width="1.5" fill="none" opacity="0.7" stroke-linecap="round"/>
+        <path d="M105 110 Q110 93 107 79 Q104 66 109 54" stroke="#F5A623" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M120 110 Q122 94 118 81 Q114 68 119 56" stroke="#F5A623" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+        <!-- Label: working -->
+        <text x="110" y="172" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="500" letter-spacing="2" fill="#9A9896" text-transform="uppercase">WORKING</text>
+
+        <!-- Arrow between -->
+        <line x1="215" y1="130" x2="265" y2="130" stroke="#3D3D45" stroke-width="1.5"/>
+        <polygon points="265,125 275,130 265,135" fill="#3D3D45"/>
+        <text x="245" y="120" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="8" fill="#9A9896" letter-spacing="1">smoke</text>
+        <text x="245" y="110" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="8" fill="#9A9896" letter-spacing="1">leaves</text>
+
+        <!-- Room right: smoke gone, machine stopped -->
+        <rect x="280" y="80" width="180" height="100" rx="2" fill="#2B2B33" stroke="#3D3D45" stroke-width="1"/>
+        <!-- Machine — dark -->
+        <rect x="310" y="110" width="120" height="50" rx="2" fill="#1A1A1F" stroke="#3D3D45" stroke-width="1"/>
+        <rect x="330" y="125" width="30" height="20" rx="1" fill="#2B2B33"/>
+        <circle cx="400" cy="135" r="8" fill="#2B2B33"/>
+        <!-- No smoke — just faint ghost lines -->
+        <path d="M350 110 Q348 95 352 82 Q356 70 350 58" stroke="#3D3D45" stroke-width="1" fill="none" opacity="0.4" stroke-linecap="round" stroke-dasharray="3,3"/>
+        <!-- Label: stopped -->
+        <text x="370" y="172" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="500" letter-spacing="2" fill="#9A9896">STOPPED</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ── ROAD ── -->
+  <main class="road">
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        There is an old joke.<br><br>
+        <em>"I know computers run on smoke."</em><br>
+        <em>"How do you know?"</em><br>
+        <em>"Because when the smoke leaves — it doesn't work anymore."</em>
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        Replace the word smoke with understanding.<br><br>
+        Now read it again.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        The team that fell apart after she left.<br><br>
+        Not because the work changed.<br>
+        Because she carried something nobody had written down.<br><br>
+        The inside of how it actually worked.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        The department that kept all the files when he retired.<br>
+        Every report. Every record. Every number.<br><br>
+        And still couldn't find anywhere why decisions had been made the way they were.<br><br>
+        The reasoning left with him.<br>
+        Quietly.<br>
+        On his last Friday afternoon.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--deadend">
+        <div class="sign-shape"><span>Dead End</span></div>
+        <span class="sign-label">Dead End</span>
+      </div>
+      <p class="beat-text muted">
+        We have built extraordinary systems for keeping machines running.<br><br>
+        We have built almost nothing for keeping the smoke in the room.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--consider">
+        <div class="sign-shape"><span>Con&shy;sider</span></div>
+        <span class="sign-label">Consider</span>
+      </div>
+      <p class="beat-text">
+        This is not a knowledge problem.<br><br>
+        The files are there. The data is there. The records are there.<br><br>
+        What is missing is the inside of it.<br>
+        The understanding that made the whole thing make sense.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--imagine">
+        <div class="sign-shape">Imagine</div>
+        <span class="sign-label">Imagine</span>
+      </div>
+      <p class="beat-text">
+        What if we could learn to notice the smoke<br>
+        before the room goes cold?<br><br>
+        Not capture it perfectly.<br>
+        Not bottle it.<br><br>
+        Just — notice it. Name it. Point at it<br>
+        carefully enough that something carries forward.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--direction">
+        <div class="sign-shape">Direction</div>
+        <span class="sign-label">Direction</span>
+      </div>
+      <p class="beat-text">
+        This is where the work begins.<br><br>
+        Not with more data.<br>
+        Not with better systems.<br><br>
+        With the recognition that understanding<br>
+        is what makes things work —<br>
+        and that it has always been leaving<br>
+        without us noticing what we were losing.
+      </p>
+    </div>
+
+    <div class="beat">
+      <div class="sign sign--conclusion">
+        <div class="sign-shape"></div>
+        <span class="sign-label">Here</span>
+      </div>
+      <p class="beat-text">
+        We can't bottle the smoke.<br><br>
+        But we can learn to notice when the room goes cold.<br><br>
+        It doesn't photograph well.<br>
+        But you know exactly when it's there.
+      </p>
+    </div>
+
+  </main>
+
+  <div class="lane-divider">
+    <div class="lane-divider-dot"></div>
+  </div>
+
+  <div class="tagline-block">
+    <p>
+      We can't bottle the smoke. But we can learn to notice when the room goes cold.<br>
+      It doesn't photograph well. But you know exactly when it's there.<br>
+      The best it ever works is when it travels between us without either person noticing.
+    </p>
+  </div>
+
+  <div class="exploration-nav">
+    <a href="investment-principle.html">Next — The Investment Principle →</a>
+    <a href="why-this-matters.html">Why This Matters</a>
+    <a href="../explorations/">All Explorations</a>
+    <a href="../index.html">Home</a>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
+
+</body>
+</html>

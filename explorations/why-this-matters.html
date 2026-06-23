@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why This Matters — The Cognitive Super Highway</title>
+  <meta name="description" content="Before the infrastructure. Before the systems. Before the theory. Three things worth understanding about why any of this matters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .why-hero {
+      padding: 5rem 2rem 3rem;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .why-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 1rem;
+    }
+    .why-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--signal);
+      margin-bottom: 1.5rem;
+    }
+    .why-hero .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.6);
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      line-height: 1.9;
+    }
+
+    /* Three principle cards */
+    .principles {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .principle-card {
+      border: 1px solid var(--lane);
+      border-left: 3px solid var(--dawn);
+      padding: 2rem 2rem 2rem 2rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .principle-card:hover {
+      background: rgba(245,166,35,0.04);
+      border-left-color: var(--dawn);
+      border-color: rgba(245,166,35,0.3);
+    }
+    .principle-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      margin-bottom: 0.5rem;
+    }
+    .principle-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--signal);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .principle-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.6);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .principle-hook {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.4);
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .principle-link {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dawn);
+      border-bottom: 1px solid rgba(245,166,35,0.3);
+      padding-bottom: 2px;
+    }
+
+    /* Tagline -->*/
+    .tagline-block {
+      max-width: 720px;
+      margin: 1rem auto 1rem;
+      padding: 2rem 2rem 0;
+      border-top: 1px solid var(--lane);
+    }
+    .tagline-block p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,238,233,0.5);
+      line-height: 2;
+      font-style: italic;
+    }
+
+    .exploration-nav {
+      max-width: 720px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .exploration-nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--lane);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .exploration-nav a:hover { color: var(--dawn); border-color: var(--dawn); }
+  </style>
+</head>
+<body>
+
+  <div class="why-hero">
+    <p class="why-eyebrow">Before everything else</p>
+    <h1>Why This Matters</h1>
+    <p class="hero-sub">
+      Before the infrastructure.<br>
+      Before the systems. Before the theory.<br><br>
+      There are three things worth sitting with.<br>
+      They don't require any framework to feel.<br>
+      You already know them.<br>
+      You just may not have had words for them yet.
+    </p>
+  </div>
+
+  <div class="principles">
+
+    <a class="principle-card" href="smoke-principle.html">
+      <p class="principle-number">I of III</p>
+      <h2 class="principle-title">The Smoke Principle</h2>
+      <p class="principle-desc">
+        Understanding is what makes things work.<br>
+        Not data. Not process. Not documentation.<br>
+        The inside of how things actually work — carried by people,
+        transferred imperfectly, and gone the moment they leave.
+      </p>
+      <p class="principle-hook">
+        "I know computers run on smoke."<br>
+        "How do you know?"<br>
+        "Because when the smoke leaves — it doesn't work anymore."
+      </p>
+      <span class="principle-link">Read this first →</span>
+    </a>
+
+    <a class="principle-card" href="investment-principle.html">
+      <p class="principle-number">II of III</p>
+      <h2 class="principle-title">The Investment Principle</h2>
+      <p class="principle-desc">
+        Every school ever built. Every road laid to last a century.
+        Every story told to a child at bedtime.
+        Humanity has always been trying to solve the smoke problem —
+        instinctively, at enormous cost, without ever naming what it was doing.
+      </p>
+      <p class="principle-hook">
+        Don't make them start from the smoke again.<br>
+        That is what every one of these investments is saying.
+      </p>
+      <span class="principle-link">Read second →</span>
+    </a>
+
+    <a class="principle-card" href="value-principle.html">
+      <p class="principle-number">III of III</p>
+      <h2 class="principle-title">The Value Principle</h2>
+      <p class="principle-desc">
+        The most valuable thing we know cannot be fully transferred.
+        A lifetime of understanding how things actually work
+        has no adequate vessel. The fear of losing it
+        is not irrational. It is precisely calibrated
+        to the actual magnitude of what disappears.
+      </p>
+      <p class="principle-hook">
+        It's a living thing. Precious and irreplaceable.<br>
+        But we can point at it. And whisper about it.<br>
+        We may be finding a way to pass it onwards.
+      </p>
+      <span class="principle-link">Read third →</span>
+    </a>
+
+  </div>
+
+  <div class="lane-divider">
+    <div class="lane-divider-dot"></div>
+  </div>
+
+  <div class="tagline-block">
+    <p>
+      We can't bottle the smoke. But we can learn to notice when the room goes cold.<br>
+      It doesn't photograph well. But you know exactly when it's there.<br>
+      The best it ever works is when it travels between us without either person noticing.
+    </p>
+  </div>
+
+  <div class="exploration-nav">
+    <a href="../explorations/">All Explorations</a>
+    <a href="../essays/">Essays</a>
+    <a href="../index.html">Home</a>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">
+      <a href="/index.html">The Cognitive Super Highway</a>
+      &nbsp;·&nbsp;
+      <a href="/explorations/">Explorations</a>
+      &nbsp;·&nbsp;
+      <a href="/essays/">Essays</a>
+      &nbsp;·&nbsp;
+      <a href="/contributors.html">Contributors</a>
+      &nbsp;·&nbsp;
+      <a href="/contribute.html">Contribute</a>
+    </p>
+  </footer>
+
+</body>
+</html>
